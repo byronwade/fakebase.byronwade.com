@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { SiteNav } from "@/components/site/nav";
+import { AppChrome } from "@/components/chrome/app-chrome";
 import { SiteFooter } from "@/components/site/footer";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-sans",
@@ -32,9 +33,10 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col overflow-x-clip">
         <ThemeProvider>
-          <SiteNav />
+          <AppChrome />
           <div className="flex-1">{children}</div>
           <SiteFooter />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

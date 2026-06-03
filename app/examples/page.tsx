@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 
 export default function ExamplesPage() {
   return (
-    <main className="mx-auto max-w-5xl px-5 py-16">
+    <main className="mx-auto max-w-5xl px-5 pb-16 pt-24">
       <header className="max-w-3xl">
         <Badge variant="outline" className="mb-4">
           Examples
