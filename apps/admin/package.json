@@ -15,14 +15,14 @@
     "@fakebase/auth": "workspace:*",
     "@fakebase/storage": "workspace:*",
     "@fakebase/adapter-json": "workspace:*",
-    "next": "15.1.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "next": "15.5.19",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
     "tailwindcss": "^3.4.0",
     "autoprefixer": "^10.4.0",
     "postcss": "^8.4.0",
     "@headlessui/react": "^2.0.0",
-    "lucide-react": "^0.460.0"
+    "lucide-react": "^0.577.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.48.0",
