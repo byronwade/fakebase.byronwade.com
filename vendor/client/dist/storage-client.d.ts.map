@@ -1,1 +1,0 @@
-{"version":3,"file":"storage-client.d.ts","sourceRoot":"","sources":["../src/storage-client.ts"],"names":[],"mappings":"AAAA;;;GAGG;AAEH,OAAO,KAAK,EAAE,cAAc,EAAE,aAAa,EAAE,MAAM,gBAAgB,CAAC;AAEpE,4CAA4C;AAC5C,MAAM,MAAM,mBAAmB,GAAG,UAAU,CAAC,OAAO,mBAAmB,CAAC,CAAC;AAEzE;;;;GAIG;AACH,wBAAgB,mBAAmB,CAAC,MAAM,EAAE,cAAc,GAAG,aAAa,CAazE"}

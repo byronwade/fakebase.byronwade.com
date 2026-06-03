@@ -11,8 +11,8 @@
  */
 import "server-only";
 import { cookies } from "next/headers";
-import { createClient, createMemoryKernel } from "fakebase";
-import { seedClient } from "@fakebase/seed";
+import { createClient, createMemoryKernel } from "@byronwade/fakebase";
+import { seedClient } from "@byronwade/seed";
 import type { Database } from "@/lib/playground/database.types";
 import { playgroundSchema, playgroundSeed } from "@/lib/playground/schema";
 import { PLAYGROUND_COOKIE } from "@/lib/playground/cookie";
@@ -37,7 +37,7 @@ async function createSeededClient(): Promise<Client> {
   // walkthrough references.
   kernel.restore(playgroundSeed);
   const client = createClient<Database>("local", "dev-key", { kernel });
-  // Enrich the sandbox with realistic, schema-derived data via @fakebase/seed —
+  // Enrich the sandbox with realistic, schema-derived data via @byronwade/seed —
   // the same feature the docs describe, running live. Deterministic per visitor.
   // `force` because the curated baseline already populated some tables.
   await seedClient(client, playgroundSchema, {

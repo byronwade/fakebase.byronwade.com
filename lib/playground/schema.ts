@@ -2,7 +2,7 @@
  * Schema IR + seed data for the live playground. Ported from the standalone
  * playground app. A blog-shaped schema: users + posts + comments.
  */
-import type { ProjectSchemaIR } from "fakebase";
+import type { ProjectSchemaIR } from "@byronwade/fakebase";
 
 export const DEMO_USER_ID = "11111111-1111-4111-8111-111111111111";
 
