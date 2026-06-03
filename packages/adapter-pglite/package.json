@@ -27,7 +27,7 @@
     "@byronwade/core": "workspace:*",
     "@byronwade/auth": "workspace:*",
     "@byronwade/storage": "workspace:*",
-    "@electric-sql/pglite": "^0.4.6"
+    "@electric-sql/pglite": "^0.5.1"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
