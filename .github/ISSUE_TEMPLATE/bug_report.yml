@@ -1,0 +1,60 @@
+name: Bug report
+description: Report a problem with Fakebase (the dev-only tool)
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report! Remember Fakebase is **local/dev-only** — behaviour
+        that differs from production Supabase on purpose (RLS approximation, local
+        auth, etc.) is a documented limitation, not a bug. See `docs/security.md`.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction
+      description: Minimal steps, schema, and code that reproduce the issue.
+      placeholder: |
+        1. Schema / seed used
+        2. Code called (e.g. supabase.from('x').select())
+        3. Observed vs expected result
+    validations:
+      required: true
+  - type: dropdown
+    id: adapter
+    attributes:
+      label: Which adapter?
+      options:
+        - memory
+        - json
+        - sqlite
+        - pglite
+        - not sure / not applicable
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Fakebase version
+      placeholder: "e.g. 0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      placeholder: "Node version, OS, Next.js version"
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / errors
+      render: shell

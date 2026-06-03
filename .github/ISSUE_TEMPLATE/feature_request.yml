@@ -1,0 +1,47 @@
+name: Feature request
+description: Suggest an improvement to Fakebase
+title: "[Feature]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fakebase aims to mirror the **developer-facing shape** of Supabase for
+        local prototyping. Requests that increase fidelity or ergonomics for that
+        goal are most likely to land.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What are you trying to do, and what's missing or awkward today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the API or behaviour you'd like. Reference the Supabase surface it maps to, if any.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      multiple: true
+      options:
+        - Database / Data API
+        - Auth
+        - Storage
+        - Realtime
+        - Functions
+        - Migrations / Types
+        - CLI
+        - Admin UI
+        - AI tooling
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered

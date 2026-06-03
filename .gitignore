@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+dist/
+.next/
+out/
+*.tsbuildinfo
+
+# Turbo
+.turbo/
+
+# Fakebase local runtime data
+.fakebase/
+
+# Test / coverage
+coverage/
+playwright-report/
+test-results/
+.vitest/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp

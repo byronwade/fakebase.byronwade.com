@@ -1,0 +1,6 @@
+packages:
+  - "packages/*"
+  - "apps/*"
+# Note: examples/* and templates/* are intentionally NOT workspace members.
+# They are standalone, copy-pasteable starters that depend on the published
+# `fakebase` package, so they stay out of the monorepo install/build/test graph.

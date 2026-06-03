@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question / Discussion
+    url: https://github.com/byronwade/fakebase/discussions
+    about: Ask questions and discuss ideas with the community.
+  - name: Security report
+    url: https://github.com/byronwade/fakebase/security/advisories/new
+    about: Privately report a security vulnerability (do not open a public issue).
