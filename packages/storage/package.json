@@ -1,6 +1,6 @@
 {
   "name": "@byronwade/storage",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Local file storage engine for Fakebase — buckets, objects, signed URLs",
   "license": "MIT",
   "type": "module",

@@ -1,6 +1,6 @@
 {
   "name": "@byronwade/server",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Local HTTP server that speaks the Supabase wire protocol (PostgREST + GoTrue), backed by the Fakebase kernel — so the real @supabase/supabase-js works as a drop-in.",
   "license": "MIT",
   "type": "module",

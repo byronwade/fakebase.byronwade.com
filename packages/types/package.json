@@ -1,6 +1,6 @@
 {
   "name": "@byronwade/types",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "TypeScript type generation from Fakebase schema IR",
   "license": "MIT",
   "type": "module",
