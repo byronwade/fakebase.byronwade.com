@@ -2,6 +2,7 @@
 import type { FakebaseKernel } from "@byronwade/core";
 import { handleRest, handleRpc } from "./rest/handler.js";
 import { handleAuth } from "./auth/handler.js";
+import { handleStorage } from "./storage/handler.js";
 import { withCors, type CorsOption } from "./cors.js";
 import { errorJson, toErrorResponse } from "./errors.js";
 import type { AuthConfig } from "./context.js";
@@ -48,6 +49,9 @@ export function createFakebaseServer(opts: FakebaseServerOptions): FakebaseServe
     }
     if (path.startsWith("/auth/v1/")) {
       return handleAuth(req, url, kernel, authCfg);
+    }
+    if (path.startsWith("/storage/v1/")) {
+      return handleStorage(req, url, kernel, authCfg);
     }
     if (path === "/health" || path === "/") {
       return new Response(JSON.stringify({ status: "ok", service: "fakebase" }), {
