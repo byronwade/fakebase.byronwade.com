@@ -453,6 +453,9 @@ importers:
       '@byronwade/core':
         specifier: workspace:*
         version: link:../core
+      ws:
+        specifier: ^8.21.0
+        version: 8.21.0
     devDependencies:
       '@byronwade/adapter-memory':
         specifier: workspace:*
@@ -463,6 +466,9 @@ importers:
       '@types/node':
         specifier: ^22.0.0
         version: 22.19.19
+      '@types/ws':
+        specifier: ^8.18.1
+        version: 8.18.1
       typescript:
         specifier: ^5.5.0
         version: 5.9.3
@@ -5719,8 +5725,7 @@ snapshots:
 
   wrappy@1.0.2: {}
 
-  ws@8.21.0:
-    optional: true
+  ws@8.21.0: {}
 
   yocto-queue@0.1.0: {}
 
