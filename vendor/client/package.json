@@ -1,0 +1,46 @@
+{
+  "name": "@fakebase/client",
+  "version": "0.1.0",
+  "description": "Supabase-shaped client facades for Fakebase",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "@fakebase/core": "file:../core"
+  },
+  "keywords": [
+    "fakebase",
+    "supabase",
+    "client",
+    "query-builder",
+    "mock"
+  ],
+  "author": "Byron Wade",
+  "homepage": "https://github.com/byronwade/fakebase#readme",
+  "bugs": {
+    "url": "https://github.com/byronwade/fakebase/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byronwade/fakebase.git",
+    "directory": "packages/client"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  }
+}

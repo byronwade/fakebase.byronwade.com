@@ -1,7 +1,5 @@
 # Fakebase
 
-[![CI](https://github.com/byronwade/fakebase/actions/workflows/ci.yml/badge.svg)](https://github.com/byronwade/fakebase/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/fakebase.svg)](https://www.npmjs.com/package/fakebase)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Built with Claude Code](https://img.shields.io/badge/built%20with-Claude%20Code-d97757.svg)](https://claude.com/claude-code)
 

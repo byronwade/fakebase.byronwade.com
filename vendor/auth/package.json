@@ -1,0 +1,47 @@
+{
+  "name": "@fakebase/auth",
+  "version": "0.1.0",
+  "description": "Local auth engine for Fakebase — password, OTP, sessions, SSR cookies",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "@fakebase/core": "file:../core"
+  },
+  "author": "Byron Wade",
+  "homepage": "https://github.com/byronwade/fakebase#readme",
+  "bugs": {
+    "url": "https://github.com/byronwade/fakebase/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byronwade/fakebase.git",
+    "directory": "packages/auth"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "supabase",
+    "local",
+    "dev",
+    "nextjs",
+    "prototype",
+    "fakebase"
+  ]
+}

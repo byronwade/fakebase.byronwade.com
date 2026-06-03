@@ -36,3 +36,8 @@ pnpm-debug.log*
 .vscode/*
 !.vscode/extensions.json
 *.swp
+
+# Vendored Fakebase packages ship their built dist — keep it tracked
+!vendor/
+!vendor/**/dist/
+!vendor/**
