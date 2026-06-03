@@ -11,16 +11,9 @@ export function DeltaPill({ delta, className }: { delta: Delta; className?: stri
       : delta.direction === "down"
         ? "bg-destructive/10 text-destructive"
         : "bg-muted text-muted-foreground";
-  const Icon =
-    delta.direction === "up" ? ArrowUp : delta.direction === "down" ? ArrowDown : null;
+  const Icon = delta.direction === "up" ? ArrowUp : delta.direction === "down" ? ArrowDown : null;
   return (
-    <span
-      className={cn(
-        "inline-flex items-center gap-0.5 rounded-full px-1.5 py-0.5 text-xs font-medium tabular-nums",
-        tone,
-        className,
-      )}
-    >
+    <span className={cn("inline-flex items-center gap-0.5 rounded-full px-1.5 py-0.5 text-xs font-medium tabular-nums", tone, className)}>
       {Icon && <Icon className="size-3" />}
       {delta.value}
     </span>
@@ -48,9 +41,7 @@ export function MetricStat({
         {label}
       </span>
       <div className="flex items-center gap-2">
-        <span className="text-2xl font-semibold tracking-tight tabular-nums">
-          {value}
-        </span>
+        <span className="text-2xl font-semibold tracking-tight tabular-nums">{value}</span>
         {delta && <DeltaPill delta={delta} />}
       </div>
     </div>

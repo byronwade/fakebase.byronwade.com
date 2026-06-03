@@ -27,12 +27,7 @@ export function StatusDot({
   return (
     <span className={cn("relative inline-flex", sizes[size], className)}>
       {pulse && (
-        <span
-          className={cn(
-            "absolute inline-flex size-full animate-ping rounded-full opacity-75",
-            dot[tone],
-          )}
-        />
+        <span className={cn("absolute inline-flex size-full animate-ping rounded-full opacity-75", dot[tone])} />
       )}
       <span className={cn("relative inline-flex size-full rounded-full", dot[tone])} />
     </span>

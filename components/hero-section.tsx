@@ -13,9 +13,7 @@ export function HeroSection({
 }) {
   return (
     <section className={cn("space-y-4", className)}>
-      {header && (
-        <div className="flex flex-wrap items-end justify-between gap-4">{header}</div>
-      )}
+      {header && <div className="flex flex-wrap items-end justify-between gap-4">{header}</div>}
       <div className="full-bleed">{children}</div>
     </section>
   );

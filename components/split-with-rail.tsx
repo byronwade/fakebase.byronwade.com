@@ -11,12 +11,7 @@ export function SplitWithRail({
   className?: string;
 }) {
   return (
-    <div
-      className={cn(
-        "grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]",
-        className,
-      )}
-    >
+    <div className={cn("grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]", className)}>
       <div>{summary}</div>
       <div>{rail}</div>
     </div>

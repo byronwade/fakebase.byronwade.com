@@ -3,10 +3,10 @@ import { cn } from "@/lib/utils";
 import { StatusDot, type StatusTone } from "@/components/ui/status-dot";
 
 export interface RailItem {
-  glyph?: React.ReactNode; // leading icon; falls back to a StatusDot
+  glyph?: React.ReactNode;        // leading icon; falls back to a StatusDot
   tone?: StatusTone;
   title: React.ReactNode;
-  meta?: React.ReactNode; // trailing (right-aligned) duration/time
+  meta?: React.ReactNode;         // trailing (right-aligned) duration/time
 }
 
 /** Split+rail archetype's right column: grouped vertical timeline with a terminal marker. */
@@ -24,28 +24,16 @@ export function TimelineRail({
       {groups.map((g, gi) => (
         <div key={gi} className="space-y-2">
           <div className="flex justify-center">
-            <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs text-muted-foreground">
-              {g.label}
-            </span>
+            <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs text-muted-foreground">{g.label}</span>
           </div>
           <ol className="overflow-hidden rounded-2xl border border-border bg-card">
             {g.items.map((it, i) => (
-              <li
-                key={i}
-                className={cn(
-                  "flex items-center gap-3 px-4 py-2.5 text-sm",
-                  i > 0 && "border-t border-border",
-                )}
-              >
+              <li key={i} className={cn("flex items-center gap-3 px-4 py-2.5 text-sm", i > 0 && "border-t border-border")}>
                 <span className="grid size-5 shrink-0 place-items-center text-muted-foreground">
                   {it.glyph ?? <StatusDot tone={it.tone ?? "neutral"} />}
                 </span>
                 <span className="min-w-0 flex-1 truncate">{it.title}</span>
-                {it.meta && (
-                  <span className="shrink-0 font-mono text-xs text-muted-foreground">
-                    {it.meta}
-                  </span>
-                )}
+                {it.meta && <span className="shrink-0 font-mono text-xs text-muted-foreground">{it.meta}</span>}
               </li>
             ))}
           </ol>
