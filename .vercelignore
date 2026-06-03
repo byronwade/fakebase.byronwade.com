@@ -5,6 +5,5 @@ node_modules
 coverage
 test-results
 e2e
-packages
 vendor/**/__tests__
 *.tsbuildinfo

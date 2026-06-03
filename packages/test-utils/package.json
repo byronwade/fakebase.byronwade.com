@@ -1,0 +1,74 @@
+{
+  "name": "@byronwade/test-utils",
+  "version": "0.1.0",
+  "description": "Contract test harness for Fakebase adapters and compatibility testing",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./compat": {
+      "import": "./dist/compat-runner.js",
+      "types": "./dist/compat-runner.d.ts"
+    },
+    "./fixtures": {
+      "import": "./dist/fixtures.js",
+      "types": "./dist/fixtures.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "@byronwade/core": "workspace:*",
+    "@byronwade/adapter-memory": "workspace:*"
+  },
+  "devDependencies": {
+    "@byronwade/adapter-json": "workspace:*",
+    "@byronwade/adapter-sqlite": "workspace:*",
+    "@byronwade/adapter-pglite": "workspace:*",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  },
+  "peerDependencies": {
+    "vitest": "^2.0.0"
+  },
+  "author": "Byron Wade",
+  "homepage": "https://github.com/byronwade/fakebase#readme",
+  "bugs": {
+    "url": "https://github.com/byronwade/fakebase/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byronwade/fakebase.git",
+    "directory": "packages/test-utils"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "supabase",
+    "local",
+    "dev",
+    "nextjs",
+    "prototype",
+    "fakebase"
+  ]
+}

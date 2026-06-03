@@ -1,0 +1,19 @@
+import { schema } from "@byronwade/migrations";
+
+export default schema({
+  tables: {
+    profiles: {
+      columns: {
+        id: { type: "uuid", primaryKey: true, defaultSql: "gen_random_uuid()" },
+        user_id: { type: "uuid", nullable: false, unique: true },
+        username: { type: "text", nullable: false },
+        full_name: { type: "text", nullable: true },
+        avatar_url: { type: "text", nullable: true },
+        website: { type: "text", nullable: true },
+        updated_at: { type: "timestamptz", defaultSql: "now()" },
+      },
+      rls: true,
+    },
+  },
+  enums: {},
+});
