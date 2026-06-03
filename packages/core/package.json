@@ -1,6 +1,6 @@
 {
   "name": "@fakebase/core",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Fakebase core kernel - schema IR, query engine, policy engine, events",
   "license": "MIT",
   "type": "module",

@@ -1,6 +1,6 @@
 {
   "name": "fakebase",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Supabase-shaped local dev platform for Next.js prototypes",
   "license": "MIT",
   "type": "module",

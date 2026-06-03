@@ -1,6 +1,6 @@
 {
   "name": "@fakebase/seed",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Schema-driven fake data generation for Fakebase — referentially-correct, deterministic, with a pluggable data provider",
   "license": "MIT",
   "type": "module",

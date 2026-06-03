@@ -1,6 +1,6 @@
 {
   "name": "@fakebase/cli",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "CLI for Fakebase — init, dev, studio, migrate, types, seed, and more",
   "license": "MIT",
   "type": "module",

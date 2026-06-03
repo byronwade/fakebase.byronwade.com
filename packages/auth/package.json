@@ -1,6 +1,6 @@
 {
   "name": "@fakebase/auth",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Local auth engine for Fakebase — password, OTP, sessions, SSR cookies",
   "license": "MIT",
   "type": "module",
