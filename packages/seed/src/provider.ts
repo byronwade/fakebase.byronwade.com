@@ -8,7 +8,7 @@
  * an alternative provider without re-implementing the engine.
  */
 
-import type { ColumnType } from "@fakebase/core";
+import type { ColumnType } from "@byronwade/core";
 import { createRng } from "./rng.js";
 
 /** A generator produces one column value per call. */

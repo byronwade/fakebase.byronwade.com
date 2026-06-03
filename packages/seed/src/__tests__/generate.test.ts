@@ -4,7 +4,7 @@ import type {
   EnumIR,
   ProjectSchemaIR,
   TableIR,
-} from "@fakebase/core";
+} from "@byronwade/core";
 import { generateRows } from "../generate.js";
 
 function table(

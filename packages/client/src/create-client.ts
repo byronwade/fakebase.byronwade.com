@@ -4,7 +4,7 @@
  * Drop-in replacement for `createClient` from `@supabase/supabase-js`:
  * ```diff
  * - import { createClient } from '@supabase/supabase-js';
- * + import { createClient } from 'fakebase';
+ * + import { createClient } from '@byronwade/fakebase';
  * ```
  */
 
@@ -17,7 +17,7 @@ import {
   type RealtimeClientFacade,
 } from "./realtime-client.js";
 import { createFunctionsClient } from "./functions-client.js";
-import type { FakebaseKernel } from "@fakebase/core";
+import type { FakebaseKernel } from "@byronwade/core";
 import type { AuthClientFacade } from "./auth-client.js";
 import type { StorageClientFacade } from "./storage-client.js";
 import type { FunctionsClientFacade } from "./functions-client.js";
@@ -36,7 +36,7 @@ export interface FakebaseClientOptions<
 > {
   /**
    * The kernel that backs this client instance.
-   * Use `createMemoryKernel()` from `@fakebase/adapter-memory` for local dev.
+   * Use `createMemoryKernel()` from `@byronwade/adapter-memory` for local dev.
    */
   kernel: FakebaseKernel;
   /**
@@ -143,7 +143,7 @@ export interface FakebaseClient<
  *
  * @example
  * ```ts
- * import { createClient, createMemoryKernel } from 'fakebase';
+ * import { createClient, createMemoryKernel } from '@byronwade/fakebase';
  *
  * const kernel = createMemoryKernel({ tables: [], enums: [], functions: [], version: 0 });
  * const db = createClient<MyDatabase>('http://localhost', 'anon-key', { kernel });

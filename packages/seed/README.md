@@ -1,15 +1,15 @@
-# @fakebase/seed
+# @byronwade/seed
 
 Schema-driven fake data generation for [Fakebase](https://github.com/byronwade/fakebase).
 Generate realistic, **referentially-correct, deterministic** rows straight from your
 schema — no hand-written seed files.
 
 ```bash
-pnpm add @fakebase/seed
+pnpm add @byronwade/seed
 ```
 
 ```ts
-import { seedClient } from "@fakebase/seed";
+import { seedClient } from "@byronwade/seed";
 
 // Idempotent — skips tables that already have rows.
 await seedClient(supabase, schema, { rowsPerTable: 20 });
@@ -21,7 +21,7 @@ await seedClient(supabase, schema, { rowsPerTable: 20 });
   with per-column overrides when you need control.
 - **Honest** — `describeResolution()` shows how every column resolves.
 - **Pluggable** — zero-dependency built-in provider; install
-  [`@fakebase/seed-faker`](../seed-faker) for `@faker-js/faker` data and locales.
+  [`@byronwade/seed-faker`](../seed-faker) for `@faker-js/faker` data and locales.
 
 Exports: `seedClient`, `generateRows`, `describeResolution`, `createBuiltinProvider`,
 `orderTables`, `createRng`, and the `DataProvider` interface.

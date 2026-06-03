@@ -4,7 +4,7 @@
  * rows are skipped, so it is safe to call on every boot.
  */
 
-import type { ProjectSchemaIR } from "@fakebase/core";
+import type { ProjectSchemaIR } from "@byronwade/core";
 import { generateRows, type GenerateOptions } from "./generate.js";
 import { orderTables } from "./order.js";
 

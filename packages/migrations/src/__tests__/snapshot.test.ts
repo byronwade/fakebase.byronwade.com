@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { mkdtemp, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import type { ProjectSchemaIR } from "@fakebase/core";
+import type { ProjectSchemaIR } from "@byronwade/core";
 import { SnapshotManager } from "../snapshot.js";
 
 const schema: ProjectSchemaIR = { version: 1, tables: [], enums: [], functions: [] };

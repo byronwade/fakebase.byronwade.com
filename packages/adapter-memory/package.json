@@ -1,5 +1,5 @@
 {
-  "name": "@fakebase/adapter-memory",
+  "name": "@byronwade/adapter-memory",
   "version": "0.1.0",
   "description": "In-memory adapter for Fakebase — full FakebaseAdapter implementation",
   "license": "MIT",
@@ -24,9 +24,9 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "@fakebase/core": "workspace:*",
-    "@fakebase/auth": "workspace:*",
-    "@fakebase/storage": "workspace:*"
+    "@byronwade/core": "workspace:*",
+    "@byronwade/auth": "workspace:*",
+    "@byronwade/storage": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

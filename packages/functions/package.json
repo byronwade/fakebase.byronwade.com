@@ -1,5 +1,5 @@
 {
-  "name": "@fakebase/functions",
+  "name": "@byronwade/functions",
   "version": "0.1.0",
   "description": "Local function runner for Fakebase",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "@fakebase/core": "workspace:*"
+    "@byronwade/core": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

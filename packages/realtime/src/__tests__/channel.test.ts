@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import { EventBus } from "@fakebase/core";
+import { EventBus } from "@byronwade/core";
 import { BroadcastRegistry } from "../broadcast-registry.js";
 import { PresenceManager } from "../presence.js";
 import { RealtimeChannel } from "../channel.js";

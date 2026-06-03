@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import type { FakebaseAdapter } from "@fakebase/core";
+import type { FakebaseAdapter } from "@byronwade/core";
 
 /** Adapters that support RLS role switching expose this method. */
 interface RoleAwareAdapter extends FakebaseAdapter {

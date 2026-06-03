@@ -1,6 +1,6 @@
 import { describe, it, expect, afterEach } from "vitest";
 
-import type { ProjectSchemaIR } from "@fakebase/core";
+import type { ProjectSchemaIR } from "@byronwade/core";
 import { PGliteAdapter } from "../pglite-adapter.js";
 
 function makeSchema(): ProjectSchemaIR {

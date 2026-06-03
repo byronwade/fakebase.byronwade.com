@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import type { ProjectSchemaIR } from "@fakebase/core";
+import type { ProjectSchemaIR } from "@byronwade/core";
 import { diffSchemas, diffToSql, isSchemaDiffEmpty } from "../diff.js";
 
 function makeSchema(overrides: Partial<ProjectSchemaIR> = {}): ProjectSchemaIR {

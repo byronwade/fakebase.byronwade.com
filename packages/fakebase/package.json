@@ -1,5 +1,5 @@
 {
-  "name": "fakebase",
+  "name": "@byronwade/fakebase",
   "version": "0.1.0",
   "description": "Supabase-shaped local dev platform for Next.js prototypes",
   "license": "MIT",
@@ -24,10 +24,10 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "@fakebase/core": "workspace:*",
-    "@fakebase/client": "workspace:*",
-    "@fakebase/adapter-memory": "workspace:*",
-    "@fakebase/auth": "workspace:*"
+    "@byronwade/core": "workspace:*",
+    "@byronwade/client": "workspace:*",
+    "@byronwade/adapter-memory": "workspace:*",
+    "@byronwade/auth": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.5.0",

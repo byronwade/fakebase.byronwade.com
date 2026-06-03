@@ -1,6 +1,6 @@
 import { describe, expect, it, beforeEach } from "vitest";
 import { MemoryAdapter } from "../memory-adapter.js";
-import type { ProjectSchemaIR } from "@fakebase/core";
+import type { ProjectSchemaIR } from "@byronwade/core";
 
 const schema: ProjectSchemaIR = {
   version: 1,

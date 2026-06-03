@@ -12,7 +12,7 @@ import type {
   EnumIR,
   ProjectSchemaIR,
   TableIR,
-} from "@fakebase/core";
+} from "@byronwade/core";
 import { createBuiltinProvider, type DataProvider } from "./provider.js";
 import { createRng } from "./rng.js";
 import { orderTables } from "./order.js";

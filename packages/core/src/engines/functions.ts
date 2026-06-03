@@ -3,7 +3,7 @@
  *
  * Handles both Edge-Function-style invocation (`functions.invoke`) and database
  * RPC calls (`rpc`). The richer Deno-style runtime conventions live in
- * `@fakebase/functions`; this registry is the minimal local executor.
+ * `@byronwade/functions`; this registry is the minimal local executor.
  */
 
 import { FakebaseError, FakebaseErrorCode } from "../errors.js";

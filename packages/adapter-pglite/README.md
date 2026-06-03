@@ -1,4 +1,4 @@
-# @fakebase/adapter-pglite
+# @byronwade/adapter-pglite
 
 PGlite (Postgres-in-WASM) adapter for [Fakebase](https://github.com/byronwade/fakebase) — the **highest-fidelity** local backend.
 
@@ -9,7 +9,7 @@ PGlite (Postgres-in-WASM) adapter for [Fakebase](https://github.com/byronwade/fa
 ## Install
 
 ```bash
-pnpm add @fakebase/adapter-pglite @fakebase/client
+pnpm add @byronwade/adapter-pglite @byronwade/client
 ```
 
 `@electric-sql/pglite` is bundled as a direct dependency — there's nothing else to install.
@@ -17,8 +17,8 @@ pnpm add @fakebase/adapter-pglite @fakebase/client
 ## Usage
 
 ```ts
-import { createPGliteKernel } from "@fakebase/adapter-pglite";
-import { createClient } from "@fakebase/client";
+import { createPGliteKernel } from "@byronwade/adapter-pglite";
+import { createClient } from "@byronwade/client";
 import { schema } from "./fakebase/schema";
 
 // In-memory (great for tests): omit `dataDir`, or pass "memory://".
@@ -37,15 +37,15 @@ readiness** automatically, so you never need to `await` construction.
 
 | Adapter                        | Backing store       | Native build     | Best for                                      |
 | ------------------------------ | ------------------- | ---------------- | --------------------------------------------- |
-| `@fakebase/adapter-memory`     | JS objects          | none             | unit tests, throwaway demos                   |
-| `@fakebase/adapter-json`       | JSON files          | none             | small durable prototypes, git-diffable data   |
-| `@fakebase/adapter-sqlite`     | SQLite (WAL)        | `better-sqlite3` | durable single-file persistence               |
-| **`@fakebase/adapter-pglite`** | **Postgres (WASM)** | **none**         | **maximum SQL fidelity before real Supabase** |
+| `@byronwade/adapter-memory`     | JS objects          | none             | unit tests, throwaway demos                   |
+| `@byronwade/adapter-json`       | JSON files          | none             | small durable prototypes, git-diffable data   |
+| `@byronwade/adapter-sqlite`     | SQLite (WAL)        | `better-sqlite3` | durable single-file persistence               |
+| **`@byronwade/adapter-pglite`** | **Postgres (WASM)** | **none**         | **maximum SQL fidelity before real Supabase** |
 
 ## Behaviour & parity notes
 
 To keep behaviour **identical across all adapters** (verified by the shared
-contract suite in `@fakebase/test-utils`):
+contract suite in `@byronwade/test-utils`):
 
 - **RLS** is evaluated in JS via the shared `PolicyEngine` (not Postgres roles),
   matching the other adapters. It is an approximation — verify against real

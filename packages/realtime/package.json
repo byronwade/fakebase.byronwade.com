@@ -1,5 +1,5 @@
 {
-  "name": "@fakebase/realtime",
+  "name": "@byronwade/realtime",
   "version": "0.1.0",
   "description": "Realtime engine for Fakebase — broadcast, presence, postgres changes",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "@fakebase/core": "workspace:*"
+    "@byronwade/core": "workspace:*"
   },
   "optionalDependencies": {
     "ws": "^8.18.0"

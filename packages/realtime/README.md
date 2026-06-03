@@ -1,4 +1,4 @@
-# `@fakebase/realtime`
+# `@byronwade/realtime`
 
 > Part of [**Fakebase**](https://github.com/byronwade/fakebase) — a Supabase-shaped, **local/dev-only** development platform for Next.js prototypes. Not for production use.
 
@@ -7,7 +7,7 @@ The realtime engine — broadcast, presence, and postgres-changes channels, plus
 ## Installation
 
 ```bash
-pnpm add @fakebase/realtime
+pnpm add @byronwade/realtime
 ```
 
 When you use `fakebase`, realtime is also reachable through the client as `db.channel(...)`. Install this package directly to use the engine standalone.
@@ -15,8 +15,8 @@ When you use `fakebase`, realtime is also reachable through the client as `db.ch
 ## Usage
 
 ```ts
-import { EventBus } from "@fakebase/core";
-import { RealtimeService } from "@fakebase/realtime";
+import { EventBus } from "@byronwade/core";
+import { RealtimeService } from "@byronwade/realtime";
 
 const realtime = new RealtimeService(new EventBus());
 const channel = realtime.channel("room-1");

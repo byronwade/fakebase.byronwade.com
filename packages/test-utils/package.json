@@ -1,5 +1,5 @@
 {
-  "name": "@fakebase/test-utils",
+  "name": "@byronwade/test-utils",
   "version": "0.1.0",
   "description": "Contract test harness for Fakebase adapters and compatibility testing",
   "license": "MIT",
@@ -28,13 +28,13 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "@fakebase/core": "workspace:*",
-    "@fakebase/adapter-memory": "workspace:*"
+    "@byronwade/core": "workspace:*",
+    "@byronwade/adapter-memory": "workspace:*"
   },
   "devDependencies": {
-    "@fakebase/adapter-json": "workspace:*",
-    "@fakebase/adapter-sqlite": "workspace:*",
-    "@fakebase/adapter-pglite": "workspace:*",
+    "@byronwade/adapter-json": "workspace:*",
+    "@byronwade/adapter-sqlite": "workspace:*",
+    "@byronwade/adapter-pglite": "workspace:*",
     "@types/node": "^22.0.0",
     "typescript": "^5.5.0",
     "vitest": "^2.0.0"

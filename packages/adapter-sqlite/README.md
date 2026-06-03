@@ -1,4 +1,4 @@
-# `@fakebase/adapter-sqlite`
+# `@byronwade/adapter-sqlite`
 
 > Part of [**Fakebase**](https://github.com/byronwade/fakebase) — a Supabase-shaped, **local/dev-only** development platform for Next.js prototypes. Not for production use.
 
@@ -7,7 +7,7 @@ A durable, single-file SQLite adapter (WAL mode) backed by `better-sqlite3`. The
 ## Installation
 
 ```bash
-pnpm add @fakebase/adapter-sqlite
+pnpm add @byronwade/adapter-sqlite
 ```
 
 Install this optional adapter directly; it pulls in the native `better-sqlite3` dependency and is not bundled with `fakebase`.
@@ -15,8 +15,8 @@ Install this optional adapter directly; it pulls in the native `better-sqlite3` 
 ## Usage
 
 ```ts
-import { createClient } from "fakebase";
-import { createSqliteKernel } from "@fakebase/adapter-sqlite";
+import { createClient } from "@byronwade/fakebase";
+import { createSqliteKernel } from "@byronwade/adapter-sqlite";
 
 const kernel = createSqliteKernel({ dbPath: ".fakebase/fakebase.db" });
 const db = createClient("http://localhost", "anon-key", { kernel });

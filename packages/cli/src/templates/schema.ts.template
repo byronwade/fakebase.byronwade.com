@@ -1,4 +1,4 @@
-import { schema } from "@fakebase/migrations";
+import { schema } from "@byronwade/migrations";
 
 export default schema({
   tables: {

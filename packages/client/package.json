@@ -1,5 +1,5 @@
 {
-  "name": "@fakebase/client",
+  "name": "@byronwade/client",
   "version": "0.1.0",
   "description": "Supabase-shaped client facades for Fakebase",
   "license": "MIT",
@@ -24,10 +24,10 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "@fakebase/core": "workspace:*"
+    "@byronwade/core": "workspace:*"
   },
   "devDependencies": {
-    "@fakebase/adapter-memory": "workspace:*",
+    "@byronwade/adapter-memory": "workspace:*",
     "@types/node": "^22.0.0",
     "typescript": "^5.5.0",
     "vitest": "^2.0.0"

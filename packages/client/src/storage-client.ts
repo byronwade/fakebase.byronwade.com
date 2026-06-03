@@ -3,7 +3,7 @@
  * `supabase.storage` surface (`from()`, `listBuckets()`, etc.).
  */
 
-import type { FakebaseKernel, StorageEngine } from "@fakebase/core";
+import type { FakebaseKernel, StorageEngine } from "@byronwade/core";
 
 /** Return type of `createStorageClient`. */
 export type StorageClientFacade = ReturnType<typeof createStorageClient>;

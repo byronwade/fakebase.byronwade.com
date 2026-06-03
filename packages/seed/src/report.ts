@@ -5,7 +5,7 @@
  * visible, not hidden.
  */
 
-import type { ProjectSchemaIR } from "@fakebase/core";
+import type { ProjectSchemaIR } from "@byronwade/core";
 import { createBuiltinProvider, type DataProvider } from "./provider.js";
 import type { OverrideFn } from "./generate.js";
 

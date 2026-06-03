@@ -11,7 +11,7 @@ import type {
   IndexIR,
   ProjectSchemaIR,
   TableIR,
-} from "@fakebase/core";
+} from "@byronwade/core";
 import { mapIrTypeToSql } from "./export-sql-helpers.js";
 
 /** A per-table set of changes between two schema snapshots. */

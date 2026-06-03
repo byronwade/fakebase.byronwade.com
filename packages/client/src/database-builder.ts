@@ -6,7 +6,7 @@
  * awaited (via the `.then()` thenable hook) or when `.csv()` is called.
  */
 
-import { FakebaseError, FakebaseErrorCode } from "@fakebase/core";
+import { FakebaseError, FakebaseErrorCode } from "@byronwade/core";
 import type {
   FakebaseKernel,
   FilterItem,
@@ -14,7 +14,7 @@ import type {
   OrderItem,
   QueryPlan,
   SimpleFilter,
-} from "@fakebase/core";
+} from "@byronwade/core";
 
 // ---------------------------------------------------------------------------
 // Database generic helpers (mirrors @supabase/supabase-js codegen shape)

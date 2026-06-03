@@ -3,7 +3,7 @@
  * inserted before the children that reference them.
  */
 
-import type { ProjectSchemaIR, TableIR } from "@fakebase/core";
+import type { ProjectSchemaIR, TableIR } from "@byronwade/core";
 
 /**
  * Order tables so that every table appears after the tables it references via

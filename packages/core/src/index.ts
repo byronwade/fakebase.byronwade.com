@@ -1,5 +1,5 @@
 /**
- * @fakebase/core — public API surface.
+ * @byronwade/core — public API surface.
  * Import from this entry point only; do not import sub-modules directly.
  */
 

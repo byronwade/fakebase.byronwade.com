@@ -9,15 +9,15 @@
  * ```
  *
  * Both `createServerClient` and `createBrowserClient` delegate to the same
- * underlying `createClient` from `@fakebase/client`. The distinction is
+ * underlying `createClient` from `@byronwade/client`. The distinction is
  * surface-level — the session can optionally be persisted via the provided
  * cookie helpers, but the memory kernel itself is stateless across requests
  * (sessions live in the `MemoryAuthEngine` instance for the process lifetime).
  */
 
-import { createClient } from "@fakebase/client";
-import type { FakebaseClient, FakebaseClientOptions } from "@fakebase/client";
-import type { FakebaseKernel } from "@fakebase/core";
+import { createClient } from "@byronwade/client";
+import type { FakebaseClient, FakebaseClientOptions } from "@byronwade/client";
+import type { FakebaseKernel } from "@byronwade/core";
 
 // ---------------------------------------------------------------------------
 // Cookie types (mirrors @supabase/ssr)
@@ -132,7 +132,7 @@ export interface BrowserClientOptions<
 /**
  * Create a browser-side Fakebase client.
  *
- * Alias for `createClient` from `@fakebase/client` — provided for API
+ * Alias for `createClient` from `@byronwade/client` — provided for API
  * symmetry with `@supabase/ssr`'s `createBrowserClient`.
  *
  * @example

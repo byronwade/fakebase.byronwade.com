@@ -1,5 +1,5 @@
 {
-  "name": "@fakebase/seed",
+  "name": "@byronwade/seed",
   "version": "0.1.0",
   "description": "Schema-driven fake data generation for Fakebase — referentially-correct, deterministic, with a pluggable data provider",
   "license": "MIT",
@@ -24,11 +24,11 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "@fakebase/core": "workspace:*"
+    "@byronwade/core": "workspace:*"
   },
   "devDependencies": {
-    "@fakebase/adapter-memory": "workspace:*",
-    "@fakebase/client": "workspace:*",
+    "@byronwade/adapter-memory": "workspace:*",
+    "@byronwade/client": "workspace:*",
     "@types/node": "^22.0.0",
     "typescript": "^5.5.0",
     "vitest": "^2.0.0"

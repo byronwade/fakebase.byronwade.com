@@ -1,5 +1,5 @@
 {
-  "name": "@fakebase/adapter-sqlite",
+  "name": "@byronwade/adapter-sqlite",
   "version": "0.1.0",
   "description": "SQLite file-backed adapter for Fakebase — WAL mode, durable persistence",
   "license": "MIT",
@@ -24,9 +24,9 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "@fakebase/core": "workspace:*",
-    "@fakebase/auth": "workspace:*",
-    "@fakebase/storage": "workspace:*",
+    "@byronwade/core": "workspace:*",
+    "@byronwade/auth": "workspace:*",
+    "@byronwade/storage": "workspace:*",
     "better-sqlite3": "^9.4.0"
   },
   "devDependencies": {

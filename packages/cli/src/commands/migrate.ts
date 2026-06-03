@@ -3,7 +3,7 @@ import { existsSync } from "node:fs";
 import { basename, join, resolve } from "node:path";
 import ora from "ora";
 import chalk from "chalk";
-import type { ProjectSchemaIR } from "@fakebase/core";
+import type { ProjectSchemaIR } from "@byronwade/core";
 import { loadConfig, type FakebaseConfig } from "../config.js";
 import { loadSchemaIROrEmpty } from "../runtime.js";
 import { print } from "../ui/print.js";
@@ -30,7 +30,7 @@ async function listMigrationFiles(migrationsDir: string): Promise<string[]> {
 async function schemaFromMigrations(migrationsDir: string): Promise<ProjectSchemaIR> {
   const files = await listMigrationFiles(migrationsDir);
   if (files.length === 0) return EMPTY_SCHEMA;
-  const { parseSqlSchema } = await import("@fakebase/migrations");
+  const { parseSqlSchema } = await import("@byronwade/migrations");
   const combined = (
     await Promise.all(files.map((f) => readFile(join(migrationsDir, f), "utf8")))
   ).join("\n");
@@ -50,7 +50,7 @@ async function loadDesiredSchema(
 ): Promise<ProjectSchemaIR | null> {
   const schemaPath = resolve(root, config.schemaPath ?? "fakebase/schema.ts");
   if (!existsSync(schemaPath)) return null;
-  const { parseTypescriptSchema } = await import("@fakebase/migrations");
+  const { parseTypescriptSchema } = await import("@byronwade/migrations");
   const text = await readFile(schemaPath, "utf8");
   return parseTypescriptSchema(text);
 }
@@ -67,7 +67,7 @@ async function computePendingSql(
   const previous = await schemaFromMigrations(migrationsDir);
 
   const { diffSchemas, diffToSql, isSchemaDiffEmpty } =
-    await import("@fakebase/migrations");
+    await import("@byronwade/migrations");
   const diff = diffSchemas(previous, desired);
   return { sql: diffToSql(diff), empty: isSchemaDiffEmpty(diff) };
 }
@@ -80,7 +80,7 @@ export async function runMigrateNew(name: string, cwd?: string): Promise<void> {
   const spinner = ora(`Creating migration "${name}"…`).start();
 
   const pending = await computePendingSql(root, config);
-  const { MigrationManager } = await import("@fakebase/migrations");
+  const { MigrationManager } = await import("@byronwade/migrations");
   const manager = new MigrationManager(migrationsDir);
 
   if (pending === null) {
@@ -166,7 +166,7 @@ export async function runMigrateApply(cwd?: string): Promise<void> {
   const config = await loadConfig(root);
   const migrationsDir = await migrationsDirFor(root, config);
 
-  const { MigrationManager } = await import("@fakebase/migrations");
+  const { MigrationManager } = await import("@byronwade/migrations");
   const manager = new MigrationManager(migrationsDir);
   const pending = await manager.pending();
 
@@ -206,7 +206,7 @@ export async function runMigrateStatus(cwd?: string): Promise<void> {
   const config = await loadConfig(root);
   const migrationsDir = await migrationsDirFor(root, config);
 
-  const { MigrationManager } = await import("@fakebase/migrations");
+  const { MigrationManager } = await import("@byronwade/migrations");
   const manager = new MigrationManager(migrationsDir);
   const migrations = await manager.list();
 

@@ -1,4 +1,4 @@
-import type { ProjectSchemaIR } from "@fakebase/core";
+import type { ProjectSchemaIR } from "@byronwade/core";
 
 /**
  * Canonical test schema used by the contract suite and compat runner.

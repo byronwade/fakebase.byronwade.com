@@ -1,19 +1,19 @@
-# @fakebase/seed-faker
+# @byronwade/seed-faker
 
 An optional [`@faker-js/faker`](https://fakerjs.dev) data provider for
-[`@fakebase/seed`](../seed) — richer fake data and locale support.
+[`@byronwade/seed`](../seed) — richer fake data and locale support.
 
 This package has **no hard dependency on Faker**; you pass your own instance in, so the
 version and locale are entirely yours.
 
 ```bash
-pnpm add -D @faker-js/faker @fakebase/seed-faker
+pnpm add -D @faker-js/faker @byronwade/seed-faker
 ```
 
 ```ts
 import { faker } from "@faker-js/faker";
-import { createFakerProvider } from "@fakebase/seed-faker";
-import { seedClient } from "@fakebase/seed";
+import { createFakerProvider } from "@byronwade/seed-faker";
+import { seedClient } from "@byronwade/seed";
 
 await seedClient(supabase, schema, {
   rowsPerTable: 20,

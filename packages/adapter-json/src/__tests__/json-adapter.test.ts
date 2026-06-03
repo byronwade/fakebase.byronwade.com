@@ -3,7 +3,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { rm, readFile } from "node:fs/promises";
 import { JsonAdapter } from "../json-adapter.js";
-import type { ProjectSchemaIR } from "@fakebase/core";
+import type { ProjectSchemaIR } from "@byronwade/core";
 
 const schema: ProjectSchemaIR = {
   version: 1,

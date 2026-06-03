@@ -7,7 +7,7 @@ const __dirname = fileURLToPath(new URL(".", import.meta.url));
 export default defineConfig({
   resolve: {
     alias: {
-      "@fakebase/core": resolve(__dirname, "../core/src/index.ts"),
+      "@byronwade/core": resolve(__dirname, "../core/src/index.ts"),
     },
   },
   test: {

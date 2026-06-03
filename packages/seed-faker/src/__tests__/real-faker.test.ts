@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { faker } from "@faker-js/faker";
-import type { ProjectSchemaIR } from "@fakebase/core";
-import { generateRows } from "@fakebase/seed";
+import type { ProjectSchemaIR } from "@byronwade/core";
+import { generateRows } from "@byronwade/seed";
 import { createFakerProvider, loadFakerProvider } from "../index.js";
 
 // A schema that exercises every semantic mapping and every type branch, so a

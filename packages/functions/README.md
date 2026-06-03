@@ -1,4 +1,4 @@
-# `@fakebase/functions`
+# `@byronwade/functions`
 
 > Part of [**Fakebase**](https://github.com/byronwade/fakebase) — a Supabase-shaped, **local/dev-only** development platform for Next.js prototypes. Not for production use.
 
@@ -7,7 +7,7 @@ A local function registry with Supabase-shaped invoke and RPC. Register handlers
 ## Installation
 
 ```bash
-pnpm add @fakebase/functions
+pnpm add @byronwade/functions
 ```
 
 Install this package directly to use the registry standalone.
@@ -15,7 +15,7 @@ Install this package directly to use the registry standalone.
 ## Usage
 
 ```ts
-import { FunctionRegistry } from "@fakebase/functions";
+import { FunctionRegistry } from "@byronwade/functions";
 
 const functions = new FunctionRegistry();
 functions.register({

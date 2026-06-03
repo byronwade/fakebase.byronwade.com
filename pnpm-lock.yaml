@@ -93,13 +93,13 @@ importers:
 
   packages/adapter-json:
     dependencies:
-      '@fakebase/auth':
+      '@byronwade/auth':
         specifier: workspace:*
         version: link:../auth
-      '@fakebase/core':
+      '@byronwade/core':
         specifier: workspace:*
         version: link:../core
-      '@fakebase/storage':
+      '@byronwade/storage':
         specifier: workspace:*
         version: link:../storage
     devDependencies:
@@ -115,13 +115,13 @@ importers:
 
   packages/adapter-memory:
     dependencies:
-      '@fakebase/auth':
+      '@byronwade/auth':
         specifier: workspace:*
         version: link:../auth
-      '@fakebase/core':
+      '@byronwade/core':
         specifier: workspace:*
         version: link:../core
-      '@fakebase/storage':
+      '@byronwade/storage':
         specifier: workspace:*
         version: link:../storage
     devDependencies:
@@ -137,18 +137,18 @@ importers:
 
   packages/adapter-pglite:
     dependencies:
+      '@byronwade/auth':
+        specifier: workspace:*
+        version: link:../auth
+      '@byronwade/core':
+        specifier: workspace:*
+        version: link:../core
+      '@byronwade/storage':
+        specifier: workspace:*
+        version: link:../storage
       '@electric-sql/pglite':
         specifier: ^0.4.6
         version: 0.4.6
-      '@fakebase/auth':
-        specifier: workspace:*
-        version: link:../auth
-      '@fakebase/core':
-        specifier: workspace:*
-        version: link:../core
-      '@fakebase/storage':
-        specifier: workspace:*
-        version: link:../storage
     devDependencies:
       '@types/node':
         specifier: ^22.0.0
@@ -162,13 +162,13 @@ importers:
 
   packages/adapter-sqlite:
     dependencies:
-      '@fakebase/auth':
+      '@byronwade/auth':
         specifier: workspace:*
         version: link:../auth
-      '@fakebase/core':
+      '@byronwade/core':
         specifier: workspace:*
         version: link:../core
-      '@fakebase/storage':
+      '@byronwade/storage':
         specifier: workspace:*
         version: link:../storage
       better-sqlite3:
@@ -190,10 +190,10 @@ importers:
 
   packages/ai:
     dependencies:
-      '@fakebase/core':
+      '@byronwade/core':
         specifier: workspace:*
         version: link:../core
-      '@fakebase/migrations':
+      '@byronwade/migrations':
         specifier: workspace:*
         version: link:../migrations
     devDependencies:
@@ -206,7 +206,7 @@ importers:
 
   packages/auth:
     dependencies:
-      '@fakebase/core':
+      '@byronwade/core':
         specifier: workspace:*
         version: link:../core
     devDependencies:
@@ -222,40 +222,40 @@ importers:
 
   packages/cli:
     dependencies:
-      '@fakebase/adapter-json':
+      '@byronwade/adapter-json':
         specifier: workspace:*
         version: link:../adapter-json
-      '@fakebase/adapter-memory':
+      '@byronwade/adapter-memory':
         specifier: workspace:*
         version: link:../adapter-memory
-      '@fakebase/adapter-pglite':
+      '@byronwade/adapter-pglite':
         specifier: workspace:*
         version: link:../adapter-pglite
-      '@fakebase/adapter-sqlite':
+      '@byronwade/adapter-sqlite':
         specifier: workspace:*
         version: link:../adapter-sqlite
-      '@fakebase/auth':
+      '@byronwade/auth':
         specifier: workspace:*
         version: link:../auth
-      '@fakebase/client':
+      '@byronwade/client':
         specifier: workspace:*
         version: link:../client
-      '@fakebase/core':
+      '@byronwade/core':
         specifier: workspace:*
         version: link:../core
-      '@fakebase/migrations':
+      '@byronwade/migrations':
         specifier: workspace:*
         version: link:../migrations
-      '@fakebase/seed':
+      '@byronwade/seed':
         specifier: workspace:*
         version: link:../seed
-      '@fakebase/seed-faker':
+      '@byronwade/seed-faker':
         specifier: workspace:*
         version: link:../seed-faker
-      '@fakebase/test-utils':
+      '@byronwade/test-utils':
         specifier: workspace:*
         version: link:../test-utils
-      '@fakebase/types':
+      '@byronwade/types':
         specifier: workspace:*
         version: link:../types
       chalk:
@@ -286,11 +286,11 @@ importers:
 
   packages/client:
     dependencies:
-      '@fakebase/core':
+      '@byronwade/core':
         specifier: workspace:*
         version: link:../core
     devDependencies:
-      '@fakebase/adapter-memory':
+      '@byronwade/adapter-memory':
         specifier: workspace:*
         version: link:../adapter-memory
       '@types/node':
@@ -317,16 +317,16 @@ importers:
 
   packages/fakebase:
     dependencies:
-      '@fakebase/adapter-memory':
+      '@byronwade/adapter-memory':
         specifier: workspace:*
         version: link:../adapter-memory
-      '@fakebase/auth':
+      '@byronwade/auth':
         specifier: workspace:*
         version: link:../auth
-      '@fakebase/client':
+      '@byronwade/client':
         specifier: workspace:*
         version: link:../client
-      '@fakebase/core':
+      '@byronwade/core':
         specifier: workspace:*
         version: link:../core
     devDependencies:
@@ -339,7 +339,7 @@ importers:
 
   packages/functions:
     dependencies:
-      '@fakebase/core':
+      '@byronwade/core':
         specifier: workspace:*
         version: link:../core
     devDependencies:
@@ -355,7 +355,7 @@ importers:
 
   packages/migrations:
     dependencies:
-      '@fakebase/core':
+      '@byronwade/core':
         specifier: workspace:*
         version: link:../core
     devDependencies:
@@ -371,7 +371,7 @@ importers:
 
   packages/realtime:
     dependencies:
-      '@fakebase/core':
+      '@byronwade/core':
         specifier: workspace:*
         version: link:../core
     devDependencies:
@@ -394,14 +394,14 @@ importers:
 
   packages/seed:
     dependencies:
-      '@fakebase/core':
+      '@byronwade/core':
         specifier: workspace:*
         version: link:../core
     devDependencies:
-      '@fakebase/adapter-memory':
+      '@byronwade/adapter-memory':
         specifier: workspace:*
         version: link:../adapter-memory
-      '@fakebase/client':
+      '@byronwade/client':
         specifier: workspace:*
         version: link:../client
       '@types/node':
@@ -416,10 +416,10 @@ importers:
 
   packages/seed-faker:
     dependencies:
-      '@fakebase/core':
+      '@byronwade/core':
         specifier: workspace:*
         version: link:../core
-      '@fakebase/seed':
+      '@byronwade/seed':
         specifier: workspace:*
         version: link:../seed
     devDependencies:
@@ -438,7 +438,7 @@ importers:
 
   packages/storage:
     dependencies:
-      '@fakebase/core':
+      '@byronwade/core':
         specifier: workspace:*
         version: link:../core
     devDependencies:
@@ -454,20 +454,20 @@ importers:
 
   packages/test-utils:
     dependencies:
-      '@fakebase/adapter-memory':
+      '@byronwade/adapter-memory':
         specifier: workspace:*
         version: link:../adapter-memory
-      '@fakebase/core':
+      '@byronwade/core':
         specifier: workspace:*
         version: link:../core
     devDependencies:
-      '@fakebase/adapter-json':
+      '@byronwade/adapter-json':
         specifier: workspace:*
         version: link:../adapter-json
-      '@fakebase/adapter-pglite':
+      '@byronwade/adapter-pglite':
         specifier: workspace:*
         version: link:../adapter-pglite
-      '@fakebase/adapter-sqlite':
+      '@byronwade/adapter-sqlite':
         specifier: workspace:*
         version: link:../adapter-sqlite
       '@types/node':
@@ -482,7 +482,7 @@ importers:
 
   packages/types:
     dependencies:
-      '@fakebase/core':
+      '@byronwade/core':
         specifier: workspace:*
         version: link:../core
     devDependencies:

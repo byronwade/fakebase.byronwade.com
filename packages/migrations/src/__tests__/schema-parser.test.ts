@@ -126,7 +126,7 @@ describe("schema() DSL helper", () => {
 
 describe("parseTypescriptSchema()", () => {
   const source = `
-import { schema } from "@fakebase/migrations";
+import { schema } from "@byronwade/migrations";
 
 export default schema({
   tables: {

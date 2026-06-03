@@ -1,18 +1,18 @@
 /**
- * @fakebase/seed-faker — a {@link DataProvider} backed by `@faker-js/faker`.
+ * @byronwade/seed-faker — a {@link DataProvider} backed by `@faker-js/faker`.
  *
  * This package has no hard dependency on Faker. You pass your own faker
  * instance in, so the version and locale are entirely yours:
  *
  * ```ts
  * import { faker } from "@faker-js/faker";
- * import { createFakerProvider } from "@fakebase/seed-faker";
+ * import { createFakerProvider } from "@byronwade/seed-faker";
  * await seedClient(client, schema, { provider: createFakerProvider(faker) });
  * ```
  */
 
-import type { ColumnType } from "@fakebase/core";
-import type { DataProvider, ValueGenerator } from "@fakebase/seed";
+import type { ColumnType } from "@byronwade/core";
+import type { DataProvider, ValueGenerator } from "@byronwade/seed";
 
 /**
  * The minimal slice of the `@faker-js/faker` API this provider uses. Declared

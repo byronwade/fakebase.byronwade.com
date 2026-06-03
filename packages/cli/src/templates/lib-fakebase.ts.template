@@ -1,5 +1,5 @@
-import { createClient } from "fakebase";
-import { createMemoryKernel } from "@fakebase/adapter-memory";
+import { createClient } from "@byronwade/fakebase";
+import { createMemoryKernel } from "@byronwade/adapter-memory";
 import appSchema from "../fakebase/schema";
 import type { Database } from "../database.types";
 
@@ -10,11 +10,11 @@ export const fakebase = createClient<Database>("local", "dev-key", { kernel });
 // Want the app pre-filled with realistic fake data on every boot, straight from
 // your schema (no hand-written seed file)?
 //
-//   1. Install:  pnpm add @fakebase/seed
+//   1. Install:  pnpm add @byronwade/seed
 //   2. Uncomment the two lines below.
 //
 // Deterministic + idempotent (skips tables that already have rows).
 // Docs: https://github.com/byronwade/fakebase/blob/main/docs/seeding.md
 //
-// import { seedClient } from "@fakebase/seed";
+// import { seedClient } from "@byronwade/seed";
 // await seedClient(fakebase, appSchema, { rowsPerTable: 10 });

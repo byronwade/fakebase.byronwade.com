@@ -1,4 +1,4 @@
-# `@fakebase/client`
+# `@byronwade/client`
 
 > Part of [**Fakebase**](https://github.com/byronwade/fakebase) — a Supabase-shaped, **local/dev-only** development platform for Next.js prototypes. Not for production use.
 
@@ -10,13 +10,13 @@ The Supabase-shaped client facades (`auth`, `storage`, `realtime`, `functions`) 
 pnpm add fakebase
 ```
 
-This package ships with `fakebase` and is published as `@fakebase/client`.
+This package ships with `fakebase` and is published as `@byronwade/client`.
 
 ## Usage
 
 ```ts
-import { createClient } from "@fakebase/client";
-import { createMemoryKernel } from "@fakebase/adapter-memory";
+import { createClient } from "@byronwade/client";
+import { createMemoryKernel } from "@byronwade/adapter-memory";
 
 const kernel = createMemoryKernel();
 const db = createClient("http://localhost", "anon-key", { kernel });

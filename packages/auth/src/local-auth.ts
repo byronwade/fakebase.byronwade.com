@@ -1,5 +1,5 @@
 import { randomBytes, randomUUID } from "node:crypto";
-import type { AuthEngine } from "@fakebase/core";
+import type { AuthEngine } from "@byronwade/core";
 import type {
   LocalUser,
   LocalSession,

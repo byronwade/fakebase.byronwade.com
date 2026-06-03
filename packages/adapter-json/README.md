@@ -1,4 +1,4 @@
-# `@fakebase/adapter-json`
+# `@byronwade/adapter-json`
 
 > Part of [**Fakebase**](https://github.com/byronwade/fakebase) — a Supabase-shaped, **local/dev-only** development platform for Next.js prototypes. Not for production use.
 
@@ -7,7 +7,7 @@ A file-backed JSON adapter. Each table is persisted as a JSON file under `.fakeb
 ## Installation
 
 ```bash
-pnpm add @fakebase/adapter-json
+pnpm add @byronwade/adapter-json
 ```
 
 Install this optional adapter directly; it is not bundled with the top-level `fakebase` package.
@@ -15,8 +15,8 @@ Install this optional adapter directly; it is not bundled with the top-level `fa
 ## Usage
 
 ```ts
-import { createClient } from "fakebase";
-import { createJsonKernel } from "@fakebase/adapter-json";
+import { createClient } from "@byronwade/fakebase";
+import { createJsonKernel } from "@byronwade/adapter-json";
 
 const kernel = createJsonKernel({ dir: ".fakebase" });
 const db = createClient("http://localhost", "anon-key", { kernel });

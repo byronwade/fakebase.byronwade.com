@@ -34,7 +34,7 @@ export async function runStudio(cwd?: string): Promise<void> {
     print.info(`Visit ${url} manually.`);
     console.log();
     print.step("To build the admin UI, run:");
-    print.step("  pnpm --filter @fakebase/studio build");
-    print.step("  pnpm --filter @fakebase/studio start");
+    print.step("  pnpm --filter @byronwade/studio build");
+    print.step("  pnpm --filter @byronwade/studio start");
   }
 }

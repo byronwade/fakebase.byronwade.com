@@ -1,5 +1,5 @@
 {
-  "name": "@fakebase/migrations",
+  "name": "@byronwade/migrations",
   "version": "0.1.0",
   "description": "Schema diff, SQL export, migration management for Fakebase",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "@fakebase/core": "workspace:*"
+    "@byronwade/core": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

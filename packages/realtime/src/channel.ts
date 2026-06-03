@@ -1,4 +1,4 @@
-import type { EventBus, FakebaseEvent } from "@fakebase/core";
+import type { EventBus, FakebaseEvent } from "@byronwade/core";
 import type { BroadcastRegistry } from "./broadcast-registry.js";
 import type { PresenceManager } from "./presence.js";
 import type {

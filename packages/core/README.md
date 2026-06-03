@@ -1,4 +1,4 @@
-# `@fakebase/core`
+# `@byronwade/core`
 
 > Part of [**Fakebase**](https://github.com/byronwade/fakebase) — a Supabase-shaped, **local/dev-only** development platform for Next.js prototypes. Not for production use.
 
@@ -10,13 +10,13 @@ The low-level kernel that powers Fakebase: schema IR, query compiler, RLS policy
 pnpm add fakebase
 ```
 
-This package ships with `fakebase` and is published as `@fakebase/core`.
+This package ships with `fakebase` and is published as `@byronwade/core`.
 
 ## Usage
 
 ```ts
-import { FakebaseKernel } from "@fakebase/core";
-import { MemoryAdapter } from "@fakebase/adapter-memory";
+import { FakebaseKernel } from "@byronwade/core";
+import { MemoryAdapter } from "@byronwade/adapter-memory";
 
 // Adapters supply a concrete FakebaseAdapter; core wires it into a kernel.
 const kernel = new FakebaseKernel({ adapter: new MemoryAdapter() });

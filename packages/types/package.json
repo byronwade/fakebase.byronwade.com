@@ -1,5 +1,5 @@
 {
-  "name": "@fakebase/types",
+  "name": "@byronwade/types",
   "version": "0.1.0",
   "description": "TypeScript type generation from Fakebase schema IR",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "@fakebase/core": "workspace:*"
+    "@byronwade/core": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.5.0",

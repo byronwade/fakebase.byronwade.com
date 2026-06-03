@@ -5,7 +5,7 @@ import { rmSync } from "node:fs";
 import Database from "better-sqlite3";
 
 import { SqliteAdapter } from "../sqlite-adapter.js";
-import type { ProjectSchemaIR } from "@fakebase/core";
+import type { ProjectSchemaIR } from "@byronwade/core";
 
 function tempDb(): string {
   return join(

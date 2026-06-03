@@ -1,5 +1,5 @@
 /**
- * @fakebase/adapter-pglite
+ * @byronwade/adapter-pglite
  *
  * PGlite (Postgres-in-WASM) adapter for Fakebase — the highest-fidelity local
  * backend. PGlite embeds a real Postgres engine compiled to WebAssembly, so you
@@ -7,15 +7,15 @@
  * with **no native build** — it runs identically on macOS, Linux, and Windows.
  *
  * ```ts
- * import { createPGliteKernel } from "@fakebase/adapter-pglite";
- * import { createClient } from "@fakebase/client";
+ * import { createPGliteKernel } from "@byronwade/adapter-pglite";
+ * import { createClient } from "@byronwade/client";
  *
  * const kernel = createPGliteKernel({ schema, dataDir: ".fakebase/pg" });
  * const supabase = createClient(kernel);
  * ```
  *
- * Use `@fakebase/adapter-memory` (zero setup) for tests, or
- * `@fakebase/adapter-sqlite` for a durable file backend without WASM.
+ * Use `@byronwade/adapter-memory` (zero setup) for tests, or
+ * `@byronwade/adapter-sqlite` for a durable file backend without WASM.
  */
 
 export {

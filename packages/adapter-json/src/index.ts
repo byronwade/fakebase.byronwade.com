@@ -1,5 +1,5 @@
 /**
- * @fakebase/adapter-json — public API surface
+ * @byronwade/adapter-json — public API surface
  */
 
 export {

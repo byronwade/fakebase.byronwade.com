@@ -1,5 +1,5 @@
 {
-  "name": "@fakebase/adapter-json",
+  "name": "@byronwade/adapter-json",
   "version": "0.1.0",
   "description": "File-backed JSON snapshot adapter for Fakebase",
   "license": "MIT",
@@ -24,9 +24,9 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "@fakebase/core": "workspace:*",
-    "@fakebase/auth": "workspace:*",
-    "@fakebase/storage": "workspace:*"
+    "@byronwade/core": "workspace:*",
+    "@byronwade/auth": "workspace:*",
+    "@byronwade/storage": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

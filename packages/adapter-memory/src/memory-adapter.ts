@@ -1,11 +1,11 @@
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { randomUUID } from "node:crypto";
-import type { FakebaseAdapter, AdapterRow, AdapterTableState } from "@fakebase/core";
-import type { QueryOptions, QueryResult } from "@fakebase/core";
-import type { Filter } from "@fakebase/core";
-import type { ProjectSchemaIR, TableIR } from "@fakebase/core";
-import type { RoleContext } from "@fakebase/core";
+import type { FakebaseAdapter, AdapterRow, AdapterTableState } from "@byronwade/core";
+import type { QueryOptions, QueryResult } from "@byronwade/core";
+import type { Filter } from "@byronwade/core";
+import type { ProjectSchemaIR, TableIR } from "@byronwade/core";
+import type { RoleContext } from "@byronwade/core";
 import {
   compileQuery,
   applyFilter,
@@ -14,11 +14,11 @@ import {
   FakebaseKernel,
   PolicyEngine,
   SchemaRegistry,
-} from "@fakebase/core";
-import { LocalAuthService, MemorySessionStorage } from "@fakebase/auth";
-import { LocalStorageService } from "@fakebase/storage";
-import type { AuthUser, OtpRecord, BucketRecord, ObjectRecord } from "@fakebase/core";
-import type { SignedUrlRecord } from "@fakebase/storage";
+} from "@byronwade/core";
+import { LocalAuthService, MemorySessionStorage } from "@byronwade/auth";
+import { LocalStorageService } from "@byronwade/storage";
+import type { AuthUser, OtpRecord, BucketRecord, ObjectRecord } from "@byronwade/core";
+import type { SignedUrlRecord } from "@byronwade/storage";
 
 /**
  * In-memory adapter for Fakebase.

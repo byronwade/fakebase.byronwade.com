@@ -1,5 +1,5 @@
 {
-  "name": "@fakebase/adapter-pglite",
+  "name": "@byronwade/adapter-pglite",
   "version": "0.1.0",
   "description": "PGlite (Postgres-in-WASM) adapter for Fakebase — highest-fidelity local Postgres, no native build",
   "license": "MIT",
@@ -24,9 +24,9 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "@fakebase/core": "workspace:*",
-    "@fakebase/auth": "workspace:*",
-    "@fakebase/storage": "workspace:*",
+    "@byronwade/core": "workspace:*",
+    "@byronwade/auth": "workspace:*",
+    "@byronwade/storage": "workspace:*",
     "@electric-sql/pglite": "^0.4.6"
   },
   "devDependencies": {

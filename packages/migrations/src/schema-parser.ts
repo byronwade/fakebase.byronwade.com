@@ -7,7 +7,7 @@ import type {
   PolicyIR,
   EnumIR,
   FunctionIR,
-} from "@fakebase/core";
+} from "@byronwade/core";
 
 // ---------------------------------------------------------------------------
 // Schema DSL types
@@ -61,7 +61,7 @@ export interface ParsedSchemaSource {
  *
  * Usage in a schema definition file:
  * ```ts
- * import { schema } from "@fakebase/migrations";
+ * import { schema } from "@byronwade/migrations";
  * export default schema({ tables: { ... }, enums: { ... } });
  * ```
  */
@@ -129,7 +129,7 @@ export function schema(def: SchemaDef): ProjectSchemaIR {
  * @example
  * ```ts
  * const ir = parseTypescriptSchema(`
- *   import { schema } from "@fakebase/migrations";
+ *   import { schema } from "@byronwade/migrations";
  *   export default schema({
  *     tables: {
  *       users: { columns: { id: { type: "uuid", primaryKey: true } } },

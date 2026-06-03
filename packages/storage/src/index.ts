@@ -11,7 +11,7 @@ export type {
   CreateSignedUrlOptions,
   StorageResult,
   StorageBucketApi,
-} from "@fakebase/core";
+} from "@byronwade/core";
 
 export type { SignedUrlRecord } from "./types.js";
 

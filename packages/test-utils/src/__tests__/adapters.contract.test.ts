@@ -2,11 +2,11 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { rmSync } from "node:fs";
 
-import type { FakebaseAdapter } from "@fakebase/core";
-import { MemoryAdapter } from "@fakebase/adapter-memory";
-import { JsonAdapter } from "@fakebase/adapter-json";
-import { SqliteAdapter } from "@fakebase/adapter-sqlite";
-import { PGliteAdapter } from "@fakebase/adapter-pglite";
+import type { FakebaseAdapter } from "@byronwade/core";
+import { MemoryAdapter } from "@byronwade/adapter-memory";
+import { JsonAdapter } from "@byronwade/adapter-json";
+import { SqliteAdapter } from "@byronwade/adapter-sqlite";
+import { PGliteAdapter } from "@byronwade/adapter-pglite";
 
 import { defineAdapterContractSuite } from "../contract-suite.js";
 import { TEST_SCHEMA } from "../fixtures.js";

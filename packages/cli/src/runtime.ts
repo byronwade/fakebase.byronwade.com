@@ -8,7 +8,7 @@
 import { readFile, readdir } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { join, resolve } from "node:path";
-import type { FakebaseKernel, ProjectSchemaIR } from "@fakebase/core";
+import type { FakebaseKernel, ProjectSchemaIR } from "@byronwade/core";
 import type { FakebaseConfig } from "./config.js";
 
 const EMPTY_SCHEMA: ProjectSchemaIR = {
@@ -32,7 +32,7 @@ export async function loadSchemaIR(
   config: FakebaseConfig,
 ): Promise<ProjectSchemaIR | null> {
   const { parseTypescriptSchema, parseSqlSchema } =
-    await import("@fakebase/migrations");
+    await import("@byronwade/migrations");
 
   // 1. TypeScript DSL schema.
   const schemaPath = resolve(root, config.schemaPath ?? "fakebase/schema.ts");
@@ -92,13 +92,13 @@ export async function buildKernel(
   const adapter = config.adapter ?? "json";
 
   if (adapter === "memory") {
-    const { createMemoryKernel } = await import("@fakebase/adapter-memory");
+    const { createMemoryKernel } = await import("@byronwade/adapter-memory");
     return createMemoryKernel(schema);
   }
 
   if (adapter === "sqlite") {
     try {
-      const mod = (await import("@fakebase/adapter-sqlite")) as {
+      const mod = (await import("@byronwade/adapter-sqlite")) as {
         createSqliteKernel: (opts: {
           dbPath?: string;
           schema?: ProjectSchemaIR;
@@ -113,14 +113,14 @@ export async function buildKernel(
         schema,
       });
     } catch {
-      const { createMemoryKernel } = await import("@fakebase/adapter-memory");
+      const { createMemoryKernel } = await import("@byronwade/adapter-memory");
       return createMemoryKernel(schema);
     }
   }
 
   if (adapter === "pglite") {
     try {
-      const mod = (await import("@fakebase/adapter-pglite")) as {
+      const mod = (await import("@byronwade/adapter-pglite")) as {
         createPGliteKernel: (opts: {
           dataDir?: string;
           schema?: ProjectSchemaIR;
@@ -135,13 +135,13 @@ export async function buildKernel(
         schema,
       });
     } catch {
-      const { createMemoryKernel } = await import("@fakebase/adapter-memory");
+      const { createMemoryKernel } = await import("@byronwade/adapter-memory");
       return createMemoryKernel(schema);
     }
   }
 
   // Default: JSON adapter.
-  const { createJsonKernel } = await import("@fakebase/adapter-json");
+  const { createJsonKernel } = await import("@byronwade/adapter-json");
   const dir =
     typeof config.adapterOptions?.["dir"] === "string"
       ? config.adapterOptions["dir"]

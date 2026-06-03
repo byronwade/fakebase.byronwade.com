@@ -16,7 +16,7 @@ import type {
   ObjectRecord,
   TransformOptions,
   FileObject,
-} from "@fakebase/core";
+} from "@byronwade/core";
 import type { SignedUrlRecord } from "./types.js";
 
 function ok<T>(data: T): { data: T; error: null } {

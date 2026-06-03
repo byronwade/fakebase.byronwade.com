@@ -1,7 +1,7 @@
 /**
  * Auth engine contract and canonical value types.
  *
- * The concrete implementation lives in `@fakebase/auth` (`LocalAuthService`),
+ * The concrete implementation lives in `@byronwade/auth` (`LocalAuthService`),
  * but the value types and the `AuthEngine` interface are defined here so the
  * kernel and the client auth facade can depend on a stable contract without a
  * circular dependency.
@@ -106,7 +106,7 @@ export interface AuthAdminApi {
 
 /**
  * The auth engine contract consumed by the kernel and the client auth facade.
- * `LocalAuthService` in `@fakebase/auth` implements this interface.
+ * `LocalAuthService` in `@byronwade/auth` implements this interface.
  */
 export interface AuthEngine {
   signUp(params: {

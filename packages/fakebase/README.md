@@ -13,7 +13,7 @@ pnpm add fakebase
 ## Usage
 
 ```ts
-import { createClient, createMemoryKernel } from "fakebase";
+import { createClient, createMemoryKernel } from "@byronwade/fakebase";
 
 const kernel = createMemoryKernel({ tables: [], enums: [], functions: [], version: 0 });
 const db = createClient("http://localhost", "anon-key", { kernel });
@@ -23,8 +23,8 @@ const { data, error } = await db.from("users").select("*").eq("role", "admin");
 
 ## What's inside
 
-- `createClient` — the Supabase-shaped client (re-exported from `@fakebase/client`).
-- `createMemoryKernel` — a zero-setup in-memory kernel (from `@fakebase/adapter-memory`).
+- `createClient` — the Supabase-shaped client (re-exported from `@byronwade/client`).
+- `createMemoryKernel` — a zero-setup in-memory kernel (from `@byronwade/adapter-memory`).
 - `fakebase/next` — SSR helpers `createServerClient` / `createBrowserClient` that mirror `@supabase/ssr`.
 - Re-exported types: `FakebaseClient`, `FakebaseClientOptions`, `FakebaseKernel`, `ProjectSchemaIR`, `TableIR`, `ColumnIR`, `LocalSession`, `LocalUser`, `AuthStateChangeEvent`.
 

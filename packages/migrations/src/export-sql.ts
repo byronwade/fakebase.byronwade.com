@@ -1,4 +1,4 @@
-import type { ProjectSchemaIR, TableIR, ColumnIR, PolicyIR } from "@fakebase/core";
+import type { ProjectSchemaIR, TableIR, ColumnIR, PolicyIR } from "@byronwade/core";
 
 import { mapIrTypeToSql } from "./export-sql-helpers.js";
 

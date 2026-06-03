@@ -1,4 +1,4 @@
-# `@fakebase/test-utils`
+# `@byronwade/test-utils`
 
 > Part of [**Fakebase**](https://github.com/byronwade/fakebase) — a Supabase-shaped, **local/dev-only** development platform for Next.js prototypes. Not for production use.
 
@@ -7,7 +7,7 @@ The contract-test harness for Fakebase adapters and Supabase-compatibility check
 ## Installation
 
 ```bash
-pnpm add -D @fakebase/test-utils
+pnpm add -D @byronwade/test-utils
 ```
 
 Requires `vitest` (peer dependency).
@@ -15,8 +15,8 @@ Requires `vitest` (peer dependency).
 ## Usage
 
 ```ts
-import { defineAdapterContractSuite } from "@fakebase/test-utils";
-import { MemoryAdapter } from "@fakebase/adapter-memory";
+import { defineAdapterContractSuite } from "@byronwade/test-utils";
+import { MemoryAdapter } from "@byronwade/adapter-memory";
 
 defineAdapterContractSuite("memory", async () => new MemoryAdapter());
 ```
@@ -26,7 +26,7 @@ defineAdapterContractSuite("memory", async () => new MemoryAdapter());
 - `defineAdapterContractSuite(name, createAdapter, teardown?)` — drops a full adapter contract suite into your Vitest run.
 - `runCompatSuite(scenarios, fakebaseClient, supabaseClient?)` + `DEFAULT_COMPAT_SCENARIOS`.
 - Fixtures: `TEST_SCHEMA`, `TEST_SEEDS`.
-- Subpath entry points: `@fakebase/test-utils/compat` and `@fakebase/test-utils/fixtures`.
+- Subpath entry points: `@byronwade/test-utils/compat` and `@byronwade/test-utils/fixtures`.
 
 ## Documentation
 

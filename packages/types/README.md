@@ -1,4 +1,4 @@
-# `@fakebase/types`
+# `@byronwade/types`
 
 > Part of [**Fakebase**](https://github.com/byronwade/fakebase) — a Supabase-shaped, **local/dev-only** development platform for Next.js prototypes. Not for production use.
 
@@ -7,16 +7,16 @@ Generates a Supabase-shaped `database.types.ts` from a Fakebase schema IR, so `c
 ## Installation
 
 ```bash
-pnpm add -D @fakebase/types
+pnpm add -D @byronwade/types
 ```
 
 ## Usage
 
 ```ts
-import { generateTypes } from "@fakebase/types";
+import { generateTypes } from "@byronwade/types";
 import { writeFileSync } from "node:fs";
 
-// `schema` is a ProjectSchemaIR (e.g. from `@fakebase/migrations`' `schema()`).
+// `schema` is a ProjectSchemaIR (e.g. from `@byronwade/migrations`' `schema()`).
 const dts = generateTypes(schema, { enumsAsUnions: true });
 writeFileSync("database.types.ts", dts);
 ```

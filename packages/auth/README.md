@@ -1,4 +1,4 @@
-# `@fakebase/auth`
+# `@byronwade/auth`
 
 > Part of [**Fakebase**](https://github.com/byronwade/fakebase) — a Supabase-shaped, **local/dev-only** development platform for Next.js prototypes. Not for production use.
 
@@ -10,12 +10,12 @@ The local auth engine — email/password, OTP, PKCE, and pluggable session stora
 pnpm add fakebase
 ```
 
-This package ships with `fakebase` and is published as `@fakebase/auth`.
+This package ships with `fakebase` and is published as `@byronwade/auth`.
 
 ## Usage
 
 ```ts
-import { LocalAuthService, MemorySessionStorage } from "@fakebase/auth";
+import { LocalAuthService, MemorySessionStorage } from "@byronwade/auth";
 
 const auth = new LocalAuthService(new Map(), new Map(), new MemorySessionStorage());
 

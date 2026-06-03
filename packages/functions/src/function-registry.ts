@@ -1,4 +1,4 @@
-import { CapabilityError } from "@fakebase/core";
+import { CapabilityError } from "@byronwade/core";
 import type {
   FunctionDefinition,
   FunctionInvokeOptions,

@@ -10,7 +10,7 @@ import type {
   RealtimePostgresCallback,
   RealtimeBroadcastCallback,
   RealtimePresenceCallback,
-} from "@fakebase/core";
+} from "@byronwade/core";
 
 // ---------------------------------------------------------------------------
 // Channel

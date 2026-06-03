@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
-import type { ProjectSchemaIR } from "@fakebase/core";
-import { createMemoryKernel } from "@fakebase/adapter-memory";
-import { createClient } from "@fakebase/client";
+import type { ProjectSchemaIR } from "@byronwade/core";
+import { createMemoryKernel } from "@byronwade/adapter-memory";
+import { createClient } from "@byronwade/client";
 import { seedClient } from "../seedClient.js";
 
 const SCHEMA: ProjectSchemaIR = {

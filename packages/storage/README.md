@@ -1,4 +1,4 @@
-# `@fakebase/storage`
+# `@byronwade/storage`
 
 > Part of [**Fakebase**](https://github.com/byronwade/fakebase) — a Supabase-shaped, **local/dev-only** development platform for Next.js prototypes. Not for production use.
 
@@ -10,12 +10,12 @@ The local filesystem storage engine — buckets, objects, and signed URLs writte
 pnpm add fakebase
 ```
 
-This package ships with `fakebase` and is published as `@fakebase/storage`.
+This package ships with `fakebase` and is published as `@byronwade/storage`.
 
 ## Usage
 
 ```ts
-import { LocalStorageService } from "@fakebase/storage";
+import { LocalStorageService } from "@byronwade/storage";
 
 const storage = new LocalStorageService(
   ".fakebase/storage",
@@ -30,7 +30,7 @@ storage.createBucket("avatars");
 ## What's inside
 
 - `LocalStorageService` — bucket/object CRUD, uploads, public + signed URLs, backed by a directory on disk.
-- Type `SignedUrlRecord`. Storage value types (`BucketRecord`, `FileObject`, `ObjectRecord`, …) are re-exported from `@fakebase/core`.
+- Type `SignedUrlRecord`. Storage value types (`BucketRecord`, `FileObject`, `ObjectRecord`, …) are re-exported from `@byronwade/core`.
 
 Dev-only — "signed" URLs are local tokens, not cryptographically secured cloud URLs.
 

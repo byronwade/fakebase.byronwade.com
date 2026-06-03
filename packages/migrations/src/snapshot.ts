@@ -1,7 +1,7 @@
 import { readFile, writeFile, readdir, rm, mkdir } from "node:fs/promises";
 import { join } from "node:path";
 import { existsSync } from "node:fs";
-import type { ProjectSchemaIR } from "@fakebase/core";
+import type { ProjectSchemaIR } from "@byronwade/core";
 
 // ---------------------------------------------------------------------------
 // Types

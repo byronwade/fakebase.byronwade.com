@@ -17,7 +17,7 @@ This project uses **Fakebase** — a local-only, Supabase-shaped database for Ne
 
 ## Critical Rules
 
-- **Never** import from \`@supabase/supabase-js\` in this project. Use \`@fakebase/adapter-memory\` or \`@fakebase/adapter-json\` instead.
+- **Never** import from \`@supabase/supabase-js\` in this project. Use \`@byronwade/adapter-memory\` or \`@byronwade/adapter-json\` instead.
 - **Never** add Supabase environment variables (\`SUPABASE_URL\`, \`SUPABASE_ANON_KEY\`) to \`.env.local\`.
 - Import the Fakebase client from \`lib/fakebase.ts\` using: \`import { fakebase } from "@/lib/fakebase"\`
 - Data only persists locally in \`.fakebase/\` (gitignored). This is intentional.
@@ -63,7 +63,7 @@ Fakebase is a local-only, Supabase-shaped tool for Next.js prototypes. It provid
 
 ## Key Constraints
 
-1. **No Supabase imports** — use \`@fakebase/*\` packages only
+1. **No Supabase imports** — use \`@byronwade/*\` packages only
 2. **No .env.local database URLs** — Fakebase needs no connection strings
 3. **Schema changes** require regenerating migrations and types
 4. **Data is ephemeral** — use \`fakebase snapshot save\` to persist state

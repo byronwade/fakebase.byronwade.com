@@ -145,7 +145,7 @@ export function createProgram(): Command {
     )
     .option("--out <path>", "output path (default supabase/seed.sql)")
     .option("--report", "print how each column resolves")
-    .option("--faker", "use the optional @fakebase/seed-faker provider")
+    .option("--faker", "use the optional @byronwade/seed-faker provider")
     .action(async (opts) => {
       await runSeedGen({
         rows: opts.rows,

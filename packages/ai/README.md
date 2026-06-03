@@ -1,4 +1,4 @@
-# `@fakebase/ai`
+# `@byronwade/ai`
 
 > Part of [**Fakebase**](https://github.com/byronwade/fakebase) — a Supabase-shaped, **local/dev-only** development platform for Next.js prototypes. Not for production use.
 
@@ -7,13 +7,13 @@ Generates AI rules, schema summaries, and editor prompt files (Cursor / Claude /
 ## Installation
 
 ```bash
-pnpm add -D @fakebase/ai
+pnpm add -D @byronwade/ai
 ```
 
 ## Usage
 
 ```ts
-import { generateFakebaseRules, generateAgentPrompt } from "@fakebase/ai";
+import { generateFakebaseRules, generateAgentPrompt } from "@byronwade/ai";
 
 const rules = generateFakebaseRules(schema, { projectName: "my-app" });
 const prompt = generateAgentPrompt("cursor", schema);

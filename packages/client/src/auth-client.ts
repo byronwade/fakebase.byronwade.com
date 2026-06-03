@@ -6,8 +6,8 @@
  * error rather than throwing, matching Supabase's error-first style.
  */
 
-import { CapabilityError } from "@fakebase/core";
-import type { FakebaseKernel, AuthEngine } from "@fakebase/core";
+import { CapabilityError } from "@byronwade/core";
+import type { FakebaseKernel, AuthEngine } from "@byronwade/core";
 
 type NotImplementedResult = { data: null; error: CapabilityError };
 

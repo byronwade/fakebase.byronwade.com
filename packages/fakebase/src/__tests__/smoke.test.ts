@@ -8,7 +8,7 @@
 import { describe, it, expect } from "vitest";
 import { createClient, createMemoryKernel } from "../index.js";
 import { createServerClient } from "../next.js";
-import type { ProjectSchemaIR } from "@fakebase/core";
+import type { ProjectSchemaIR } from "@byronwade/core";
 
 const schema: ProjectSchemaIR = {
   version: 1,

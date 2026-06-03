@@ -1,4 +1,4 @@
-# `@fakebase/cli`
+# `@byronwade/cli`
 
 > Part of [**Fakebase**](https://github.com/byronwade/fakebase) — a Supabase-shaped, **local/dev-only** development platform for Next.js prototypes. Not for production use.
 
@@ -7,7 +7,7 @@ The `fakebase` command-line tool. Scaffold and run a local, Supabase-shaped back
 ## Installation
 
 ```bash
-pnpm add -D @fakebase/cli
+pnpm add -D @byronwade/cli
 ```
 
 Or run it without installing:

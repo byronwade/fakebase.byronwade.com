@@ -9,7 +9,7 @@ export async function readTemplate(name: string): Promise<string> {
   return readFile(filePath, "utf8");
 }
 
-export const SEED_TEMPLATE = `import type { FakebaseConfig } from "@fakebase/cli";
+export const SEED_TEMPLATE = `import type { FakebaseConfig } from "@byronwade/cli";
 
 // Seed data inserted when running \`fakebase seed run\`
 export default async function seed(_client: unknown) {

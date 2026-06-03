@@ -7,7 +7,7 @@ import type {
   FakebaseKernel,
   FunctionInvokeOptions,
   FunctionInvokeResult,
-} from "@fakebase/core";
+} from "@byronwade/core";
 
 /**
  * The `supabase.functions` facade. Mirrors Supabase's functions client, which

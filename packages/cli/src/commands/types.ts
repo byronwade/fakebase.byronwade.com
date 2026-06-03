@@ -17,7 +17,7 @@ export async function runTypesGen(cwd?: string): Promise<void> {
     let typeContent: string;
 
     if (schema && schema.tables.length > 0) {
-      const { generateTypes } = await import("@fakebase/types");
+      const { generateTypes } = await import("@byronwade/types");
       typeContent = generateTypes(schema);
     } else {
       spinner.warn("No schema found — writing a starter database.types.ts");

@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
-import type { ProjectSchemaIR, CapabilityEntry } from "@fakebase/core";
-import { CapabilityStatus } from "@fakebase/core";
+import type { ProjectSchemaIR, CapabilityEntry } from "@byronwade/core";
+import { CapabilityStatus } from "@byronwade/core";
 import {
   generateFakebaseRules,
   generateSchemasSummary,
@@ -453,8 +453,8 @@ describe("generateAgentsFile", () => {
 
   it("mentions adapter architecture", () => {
     const result = generateAgentsFile(testSchema);
-    expect(result).toContain("@fakebase/adapter-json");
-    expect(result).toContain("@fakebase/auth");
+    expect(result).toContain("@byronwade/adapter-json");
+    expect(result).toContain("@byronwade/auth");
   });
 
   it("includes completion criteria", () => {

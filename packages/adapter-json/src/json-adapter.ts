@@ -35,11 +35,11 @@ import {
   type QueryOptions,
   type QueryResult,
   type RoleContext,
-} from "@fakebase/core";
-import { LocalAuthService, MemorySessionStorage } from "@fakebase/auth";
-import { LocalStorageService } from "@fakebase/storage";
-import type { AuthUser, OtpRecord, BucketRecord, ObjectRecord } from "@fakebase/core";
-import type { SignedUrlRecord } from "@fakebase/storage";
+} from "@byronwade/core";
+import { LocalAuthService, MemorySessionStorage } from "@byronwade/auth";
+import { LocalStorageService } from "@byronwade/storage";
+import type { AuthUser, OtpRecord, BucketRecord, ObjectRecord } from "@byronwade/core";
+import type { SignedUrlRecord } from "@byronwade/storage";
 
 /** Options for constructing a JsonAdapter. */
 export interface JsonAdapterOptions {

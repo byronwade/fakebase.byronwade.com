@@ -1,4 +1,4 @@
-import type { ColumnType } from "@fakebase/core";
+import type { ColumnType } from "@byronwade/core";
 
 /** Map an IR ColumnType to its canonical Postgres SQL type name. */
 export function mapIrTypeToSql(colType: ColumnType): string {

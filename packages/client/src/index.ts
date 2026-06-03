@@ -1,5 +1,5 @@
 /**
- * @fakebase/client — public API barrel.
+ * @byronwade/client — public API barrel.
  */
 
 export { DatabaseBuilder } from "./database-builder.js";

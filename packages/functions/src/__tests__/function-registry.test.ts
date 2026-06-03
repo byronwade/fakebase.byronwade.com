@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import { CapabilityError } from "@fakebase/core";
+import { CapabilityError } from "@byronwade/core";
 import { FunctionRegistry } from "../function-registry.js";
 import type { FunctionRequest } from "../types.js";
 

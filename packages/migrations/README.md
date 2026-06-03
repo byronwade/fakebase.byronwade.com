@@ -1,4 +1,4 @@
-# `@fakebase/migrations`
+# `@byronwade/migrations`
 
 > Part of [**Fakebase**](https://github.com/byronwade/fakebase) — a Supabase-shaped, **local/dev-only** development platform for Next.js prototypes. Not for production use.
 
@@ -7,13 +7,13 @@ Schema tooling for Fakebase: define a schema with the `schema()` DSL, diff two s
 ## Installation
 
 ```bash
-pnpm add -D @fakebase/migrations
+pnpm add -D @byronwade/migrations
 ```
 
 ## Usage
 
 ```ts
-import { schema, exportSupabaseSql } from "@fakebase/migrations";
+import { schema, exportSupabaseSql } from "@byronwade/migrations";
 
 const ir = schema({
   tables: {

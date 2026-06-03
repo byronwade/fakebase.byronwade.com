@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { ProjectSchemaIR } from "@fakebase/core";
+import type { ProjectSchemaIR } from "@byronwade/core";
 import { describeResolution } from "../report.js";
 
 const SCHEMA: ProjectSchemaIR = {

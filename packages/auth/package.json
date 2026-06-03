@@ -1,5 +1,5 @@
 {
-  "name": "@fakebase/auth",
+  "name": "@byronwade/auth",
   "version": "0.1.0",
   "description": "Local auth engine for Fakebase — password, OTP, sessions, SSR cookies",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "@fakebase/core": "workspace:*"
+    "@byronwade/core": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

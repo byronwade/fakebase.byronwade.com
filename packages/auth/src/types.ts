@@ -1,9 +1,9 @@
 /**
  * Auth value types.
  *
- * The canonical definitions live in `@fakebase/core` so the kernel and the
+ * The canonical definitions live in `@byronwade/core` so the kernel and the
  * client auth facade share one contract. They are re-exported here under the
- * `Local*` names used throughout `@fakebase/auth`.
+ * `Local*` names used throughout `@byronwade/auth`.
  */
 
 export type {
@@ -12,9 +12,9 @@ export type {
   AuthChangeEvent,
   OtpRecord,
   SessionStorageAdapter,
-} from "@fakebase/core";
+} from "@byronwade/core";
 
-import type { AuthChangeEvent, AuthSession } from "@fakebase/core";
+import type { AuthChangeEvent, AuthSession } from "@byronwade/core";
 
 /** Payload shape passed to internal auth-state listeners. */
 export interface AuthStateChangeEvent {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { ProjectSchemaIR, TableIR } from "@fakebase/core";
+import type { ProjectSchemaIR, TableIR } from "@byronwade/core";
 import { orderTables } from "../order.js";
 
 function table(

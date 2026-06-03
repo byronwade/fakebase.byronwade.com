@@ -2,7 +2,7 @@ import chalk from "chalk";
 import ora from "ora";
 import { print } from "../ui/print.js";
 import { renderTable } from "../ui/table.js";
-import type { CompatReport, SupabaseLikeClient } from "@fakebase/test-utils/compat";
+import type { CompatReport, SupabaseLikeClient } from "@byronwade/test-utils/compat";
 
 function statusColor(status: CompatReport["status"]): string {
   switch (status) {
@@ -47,10 +47,10 @@ export async function runVerifySupabase(): Promise<void> {
   const supabaseAnonKey = process.env["SUPABASE_ANON_KEY"];
 
   const { DEFAULT_COMPAT_SCENARIOS, runCompatSuite } =
-    await import("@fakebase/test-utils/compat");
-  const { TEST_SCHEMA } = await import("@fakebase/test-utils/fixtures");
-  const { createMemoryKernel } = await import("@fakebase/adapter-memory");
-  const { createClient } = await import("@fakebase/client");
+    await import("@byronwade/test-utils/compat");
+  const { TEST_SCHEMA } = await import("@byronwade/test-utils/fixtures");
+  const { createMemoryKernel } = await import("@byronwade/adapter-memory");
+  const { createClient } = await import("@byronwade/client");
 
   const kernel = createMemoryKernel(TEST_SCHEMA);
   const fakebaseClient = createClient("http://localhost", "service_role", {

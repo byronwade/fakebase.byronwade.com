@@ -4,7 +4,7 @@
  * The kernel emits Postgres-change events from its mutation commit pipeline;
  * the client realtime facade subscribes to those events to drive
  * `postgres_changes` channel callbacks. Broadcast and presence are layered on
- * top in the client channel (and in `@fakebase/realtime` for the richer
+ * top in the client channel (and in `@byronwade/realtime` for the richer
  * cross-process bridge).
  */
 
@@ -65,7 +65,7 @@ export interface RealtimeEngine {
  * Default realtime engine — wraps a {@link EventBus}. Subscribing registers a
  * filtered bus listener; emitting publishes a {@link FakebaseEvent}, so both
  * this engine's subscribers and any raw bus subscribers (e.g.
- * `@fakebase/realtime`'s `RealtimeService`) receive the change.
+ * `@byronwade/realtime`'s `RealtimeService`) receive the change.
  */
 export class InProcessRealtimeEngine implements RealtimeEngine {
   constructor(private readonly bus: EventBus) {}

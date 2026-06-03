@@ -6,9 +6,9 @@
  */
 
 import { describe, it, expect } from "vitest";
-import { createMemoryKernel } from "@fakebase/adapter-memory";
+import { createMemoryKernel } from "@byronwade/adapter-memory";
 import { createClient } from "../create-client.js";
-import type { ProjectSchemaIR } from "@fakebase/core";
+import type { ProjectSchemaIR } from "@byronwade/core";
 
 // ---------------------------------------------------------------------------
 // Test database type

@@ -39,7 +39,7 @@ export async function runSeedRun(cwd?: string): Promise<void> {
     const schema = await loadSchemaIROrEmpty(root, config);
     const kernel = await buildKernel(root, config, schema);
 
-    const { createClient } = await import("@fakebase/client");
+    const { createClient } = await import("@byronwade/client");
     const client = createClient("http://localhost", "service_role", { kernel });
 
     try {
@@ -65,7 +65,7 @@ export interface SeedGenOptions {
   out?: string;
   /** Print the per-column resolution report instead of staying silent. */
   report?: boolean;
-  /** Use the optional `@fakebase/seed-faker` provider for richer data. */
+  /** Use the optional `@byronwade/seed-faker` provider for richer data. */
   faker?: boolean;
   cwd?: string;
 }
@@ -90,7 +90,7 @@ function parseTableCounts(entries: string[] | undefined): Record<string, number>
 /**
  * Generate referentially-correct fake data straight from the schema and write
  * it to `supabase/seed.sql`. Deterministic; uses the built-in data provider
- * unless `--faker` is passed (and `@fakebase/seed-faker` is installed).
+ * unless `--faker` is passed (and `@byronwade/seed-faker` is installed).
  */
 export async function runSeedGen(options: SeedGenOptions = {}): Promise<void> {
   const root = resolve(options.cwd ?? process.cwd());
@@ -112,13 +112,13 @@ export async function runSeedGen(options: SeedGenOptions = {}): Promise<void> {
     tables: { ...cfg.tables, ...parseTableCounts(options.table) },
   };
 
-  const { generateRows, describeResolution } = await import("@fakebase/seed");
+  const { generateRows, describeResolution } = await import("@byronwade/seed");
 
   // Optional Faker provider — honest failure if it isn't installed.
-  let provider: import("@fakebase/seed").DataProvider | undefined;
+  let provider: import("@byronwade/seed").DataProvider | undefined;
   if (options.faker) {
     try {
-      const { loadFakerProvider } = await import("@fakebase/seed-faker");
+      const { loadFakerProvider } = await import("@byronwade/seed-faker");
       provider = await loadFakerProvider();
     } catch {
       print.error(
@@ -150,7 +150,7 @@ export async function runSeedGen(options: SeedGenOptions = {}): Promise<void> {
       rows[tableName] = value;
     }
 
-    const { exportSeedSql } = await import("@fakebase/migrations");
+    const { exportSeedSql } = await import("@byronwade/migrations");
     // Omit the timestamp header so re-running with the same seed yields a
     // byte-identical file (clean git diffs).
     const seedSql = exportSeedSql(schema, rows, { timestamp: false });
@@ -191,7 +191,7 @@ export async function runSeedExport(cwd?: string): Promise<void> {
       rows[tableName] = value as Record<string, unknown>[];
     }
 
-    const { exportSeedSql } = await import("@fakebase/migrations");
+    const { exportSeedSql } = await import("@byronwade/migrations");
     const seedSql = exportSeedSql(schema, rows);
 
     const supabaseDir = join(root, "supabase");

@@ -179,7 +179,7 @@ export async function runDoctor(cwd?: string): Promise<void> {
     });
   }
 
-  // 6. Scan for @fakebase/core imports in app code (capability stubs)
+  // 6. Scan for @byronwade/core imports in app code (capability stubs)
   const stubPatterns = ["kernel.functions.callRpc", "StubStorage", "StubAuth"];
   const appDirs = ["app", "pages", "src", "components", "lib"];
   const foundStubs: string[] = [];

@@ -1,7 +1,7 @@
 {
-  "name": "@fakebase/seed-faker",
+  "name": "@byronwade/seed-faker",
   "version": "0.1.0",
-  "description": "Faker-backed data provider for @fakebase/seed — richer fake data and locales",
+  "description": "Faker-backed data provider for @byronwade/seed — richer fake data and locales",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",
@@ -24,8 +24,8 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "@fakebase/core": "workspace:*",
-    "@fakebase/seed": "workspace:*"
+    "@byronwade/core": "workspace:*",
+    "@byronwade/seed": "workspace:*"
   },
   "peerDependencies": {
     "@faker-js/faker": ">=9.1"

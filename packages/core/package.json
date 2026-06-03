@@ -1,5 +1,5 @@
 {
-  "name": "@fakebase/core",
+  "name": "@byronwade/core",
   "version": "0.1.0",
   "description": "Fakebase core kernel - schema IR, query engine, policy engine, events",
   "license": "MIT",

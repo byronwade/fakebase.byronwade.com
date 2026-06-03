@@ -1,4 +1,4 @@
-# `@fakebase/adapter-memory`
+# `@byronwade/adapter-memory`
 
 > Part of [**Fakebase**](https://github.com/byronwade/fakebase) — a Supabase-shaped, **local/dev-only** development platform for Next.js prototypes. Not for production use.
 
@@ -10,13 +10,13 @@ The zero-setup, in-memory adapter — the default backing store for local dev. D
 pnpm add fakebase
 ```
 
-This package ships with `fakebase` and is published as `@fakebase/adapter-memory`.
+This package ships with `fakebase` and is published as `@byronwade/adapter-memory`.
 
 ## Usage
 
 ```ts
-import { createClient } from "fakebase";
-import { createMemoryKernel } from "@fakebase/adapter-memory";
+import { createClient } from "@byronwade/fakebase";
+import { createMemoryKernel } from "@byronwade/adapter-memory";
 
 const kernel = createMemoryKernel(); // optionally pass a ProjectSchemaIR
 const db = createClient("http://localhost", "anon-key", { kernel });
@@ -27,7 +27,7 @@ const db = createClient("http://localhost", "anon-key", { kernel });
 - `createMemoryKernel(schema?)` — builds a fully wired kernel (data + auth + storage) in one call.
 - `MemoryAdapter` — the raw `FakebaseAdapter` implementation if you want to assemble a kernel yourself.
 
-State is **not** persisted across restarts — use `@fakebase/adapter-json` or `@fakebase/adapter-sqlite` for durability.
+State is **not** persisted across restarts — use `@byronwade/adapter-json` or `@byronwade/adapter-sqlite` for durability.
 
 ## Documentation
 

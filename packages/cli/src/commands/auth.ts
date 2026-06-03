@@ -6,7 +6,7 @@ export async function runAuthInbox(): Promise<void> {
   print.header("Auth OTP Inbox");
 
   try {
-    const { LocalAuthService, MemorySessionStorage } = await import("@fakebase/auth");
+    const { LocalAuthService, MemorySessionStorage } = await import("@byronwade/auth");
 
     const storage = new MemorySessionStorage();
     const auth = new LocalAuthService(new Map(), new Map(), storage);
@@ -47,7 +47,7 @@ export async function runAuthInbox(): Promise<void> {
     print.error(
       `Could not load auth service: ${err instanceof Error ? err.message : String(err)}`,
     );
-    print.step("Make sure @fakebase/auth is built.");
+    print.step("Make sure @byronwade/auth is built.");
   }
 }
 
@@ -55,7 +55,7 @@ export async function runAuthUsers(): Promise<void> {
   print.header("Auth Users");
 
   try {
-    const { LocalAuthService, MemorySessionStorage } = await import("@fakebase/auth");
+    const { LocalAuthService, MemorySessionStorage } = await import("@byronwade/auth");
 
     const storage = new MemorySessionStorage();
     const auth = new LocalAuthService(new Map(), new Map(), storage);
@@ -102,6 +102,6 @@ export async function runAuthUsers(): Promise<void> {
     print.error(
       `Could not load auth service: ${err instanceof Error ? err.message : String(err)}`,
     );
-    print.step("Make sure @fakebase/auth is built.");
+    print.step("Make sure @byronwade/auth is built.");
   }
 }
