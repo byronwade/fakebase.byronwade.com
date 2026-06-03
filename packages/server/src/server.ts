@@ -3,6 +3,7 @@ import type { FakebaseKernel } from "@byronwade/core";
 import { handleRest, handleRpc } from "./rest/handler.js";
 import { handleAuth } from "./auth/handler.js";
 import { handleStorage } from "./storage/handler.js";
+import { handleRealtimeConnection } from "./realtime/server.js";
 import { withCors, type CorsOption } from "./cors.js";
 import { errorJson, toErrorResponse } from "./errors.js";
 import type { AuthConfig } from "./context.js";
@@ -79,7 +80,10 @@ export function createFakebaseServer(opts: FakebaseServerOptions): FakebaseServe
 
   return {
     fetch,
-    listen: (port?: number) => nodeListen(fetch, port),
+    listen: (port?: number) =>
+      nodeListen(fetch, port, {
+        onRealtime: (socket) => handleRealtimeConnection(socket, kernel),
+      }),
     anonKey: authCfg.anonKey,
     serviceKey: authCfg.serviceKey,
   };

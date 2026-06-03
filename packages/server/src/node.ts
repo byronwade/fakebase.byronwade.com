@@ -1,9 +1,17 @@
-/** node:http adapter: serve a Web fetch handler on a port. */
+/** node:http adapter: serve a Web fetch handler (+ optional realtime ws) on a port. */
 import { createServer } from "node:http";
+import { WebSocketServer } from "ws";
+import type { WsLike } from "./realtime/server.js";
+
+export interface ListenOptions {
+  /** Called for each /realtime/v1/websocket connection. */
+  onRealtime?: (socket: WsLike) => void;
+}
 
 export async function listen(
   handler: (req: Request) => Promise<Response>,
   port = 54321,
+  options: ListenOptions = {},
 ): Promise<{ url: string; close(): Promise<void> }> {
   const server = createServer(async (nodeReq, nodeRes) => {
     const url = `http://localhost:${port}${nodeReq.url ?? "/"}`;
@@ -21,9 +29,26 @@ export async function listen(
     const buf = Buffer.from(await res.arrayBuffer());
     nodeRes.end(buf);
   });
+
+  let wss: WebSocketServer | undefined;
+  if (options.onRealtime) {
+    wss = new WebSocketServer({ noServer: true });
+    server.on("upgrade", (req, socket, head) => {
+      if ((req.url ?? "").startsWith("/realtime/v1/websocket")) {
+        wss!.handleUpgrade(req, socket, head, (ws) => options.onRealtime!(ws as unknown as WsLike));
+      } else {
+        socket.destroy();
+      }
+    });
+  }
+
   await new Promise<void>((resolve) => server.listen(port, resolve));
   return {
     url: `http://localhost:${port}`,
-    close: () => new Promise<void>((resolve, reject) => server.close((e) => (e ? reject(e) : resolve()))),
+    close: () =>
+      new Promise<void>((resolve, reject) => {
+        wss?.close();
+        server.close((e) => (e ? reject(e) : resolve()));
+      }),
   };
 }

@@ -11,7 +11,17 @@ server both in-process (custom `fetch`) and over a real HTTP port — CRUD, `eq`
 `count: exact`, `single()`, and the full `signUp → signInWithPassword → getUser → signOut` auth
 lifecycle. Decisions taken on the open questions: package name `@byronwade/server`; fixed
 well-known dev keys (`DEV_ANON_KEY`/`DEV_SERVICE_KEY`/`DEV_JWT_SECRET`); added `fakebase serve`
-as a dedicated command (left `dev` as-is). Phases 2 (storage) and 3 (realtime ws) remain.
+as a dedicated command (left `dev` as-is).
+
+**Phases 2 & 3 also shipped** (42 tests total):
+- **Phase 2 — Storage (`/storage/v1`):** bucket CRUD + object upload/update/download/list/remove +
+  signed/public URLs, wrapping the storage engine. Proven with the real supabase-js storage client.
+- **Phase 3 — Realtime (`/realtime/v1/websocket`):** a Phoenix-channels ws server (via `ws`,
+  attached through the `node:http` upgrade) bridged to the kernel's realtime engine. The real
+  supabase-js realtime client connects, `SUBSCRIBED`s, and receives `postgres_changes` events from
+  REST mutations — verified end-to-end. Cross-client broadcast/presence is the next refinement.
+
+The full Supabase wire protocol (DB + Auth + Storage + Realtime) now works with the stock client.
 
 ---
 

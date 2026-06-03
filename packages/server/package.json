@@ -6,8 +6,16 @@
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": ["dist", "README.md"],
-  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "vitest run",
@@ -16,18 +24,31 @@
     "lint": "eslint src"
   },
   "dependencies": {
+    "@byronwade/auth": "workspace:*",
     "@byronwade/core": "workspace:*",
-    "@byronwade/auth": "workspace:*"
+    "ws": "^8.21.0"
   },
   "devDependencies": {
     "@byronwade/adapter-memory": "workspace:*",
     "@supabase/supabase-js": "^2.45.0",
     "@types/node": "^22.0.0",
+    "@types/ws": "^8.18.1",
     "typescript": "^5.5.0",
     "vitest": "^2.0.0"
   },
-  "engines": { "node": ">=20.0.0" },
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "sideEffects": false,
-  "publishConfig": { "access": "public" },
-  "keywords": ["supabase", "postgrest", "gotrue", "local", "server", "fakebase"]
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "supabase",
+    "postgrest",
+    "gotrue",
+    "local",
+    "server",
+    "fakebase"
+  ]
 }
