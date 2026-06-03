@@ -22,7 +22,7 @@ You need three things. If all three are true, everything below "just works":
    `supabase/migrations`. No schema → nothing to generate.
 2. **Server-side execution.** The kernel uses Node built-ins (`fs`, `crypto`), so seeding
    runs **only on the server** — never in a browser/client component. Node `>=20`.
-3. **The package installed:** `pnpm add @fakebase/seed` (the CLI bundles it already).
+3. **The package installed:** `pnpm add @byronwade/seed` (the CLI bundles it already).
 
 That's it. RLS will **not** block seeding — the kernel runs as `service_role` by default, so
 inserts bypass row-level security. (See [Troubleshooting](#troubleshooting) if you changed
@@ -34,7 +34,7 @@ the role yourself.)
 | ------------------------------------------------------ | ---------------------------- |
 | A populated database the moment your prototype boots   | `seedClient()` at runtime    |
 | A reviewable, committable `supabase/seed.sql`          | `fakebase seed gen` (CLI)    |
-| Full realism / locales                                 | the `@fakebase/seed-faker` provider |
+| Full realism / locales                                 | the `@byronwade/seed-faker` provider |
 
 Everything that makes the data *correct* — primary-key uniqueness, foreign-key integrity,
 enum validity, `unique`/`nullable` handling, deterministic output — lives in the engine.
@@ -44,15 +44,15 @@ changing any of that behavior.
 ## Quick start — runtime (instant dev data)
 
 ```bash
-pnpm add fakebase @fakebase/seed
+pnpm add @byronwade/fakebase @byronwade/seed
 ```
 
 ```ts
 // lib/fakebase.ts  — SERVER-ONLY. Do not import this from a client component.
 import "server-only";
-import { createClient, createMemoryKernel } from "fakebase";
-import type { ProjectSchemaIR } from "fakebase";
-import { seedClient } from "@fakebase/seed";
+import { createClient, createMemoryKernel } from "@byronwade/fakebase";
+import type { ProjectSchemaIR } from "@byronwade/fakebase";
+import { seedClient } from "@byronwade/seed";
 
 // 1. Your schema (the SAME object goes to the kernel AND to seedClient).
 const schema: ProjectSchemaIR = {
@@ -220,7 +220,7 @@ Output is deterministic by default. The same schema and `seed` produce identical
 every run — stable reloads, clean git diffs.
 
 ```ts
-import { generateRows } from "@fakebase/seed";
+import { generateRows } from "@byronwade/seed";
 generateRows(schema, { seed: 12345 }); // identical every time
 ```
 
@@ -234,12 +234,12 @@ For richer values and locale support, install Faker (**v9.1+**) and the wrapper,
 the provider:
 
 ```bash
-pnpm add -D @faker-js/faker @fakebase/seed-faker
+pnpm add -D @faker-js/faker @byronwade/seed-faker
 ```
 
 ```ts
 import { faker } from "@faker-js/faker";
-import { createFakerProvider } from "@fakebase/seed-faker";
+import { createFakerProvider } from "@byronwade/seed-faker";
 
 await seedClient(supabase, schema, {
   rowsPerTable: 20,

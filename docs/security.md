@@ -57,7 +57,7 @@ admin UI bound to localhost.
 
 ## Admin UI constraints
 
-The `@fakebase/admin` app is dev-only by design:
+The `@byronwade/admin` app is dev-only by design:
 
 - Binds to `localhost` only.
 - Intended to run in development; gate any non-dev exposure behind an explicit opt-in flag.

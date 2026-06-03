@@ -1,6 +1,7 @@
 /** Shared content for the marketing/docs site. Kept in sync with the root docs/. */
 
-export const REPO_URL = "https://github.com/byronwade/fakebase";
+export const REPO_URL = "https://github.com/byronwade/fakebase.byronwade.com";
+export const NPM_URL = "https://www.npmjs.com/package/@byronwade/fakebase";
 
 export const NAV_LINKS: { href: string; label: string }[] = [
   { href: "/how-it-works", label: "How it works" },
@@ -77,7 +78,7 @@ export const COMPAT_MATRIX: { area: string; fidelity: Fidelity; note: string }[]
   },
 ];
 
-export const QUICK_START = `import { createClient, createMemoryKernel } from "fakebase";
+export const QUICK_START = `import { createClient, createMemoryKernel } from "@byronwade/fakebase";
 import schema from "./fakebase/schema";
 
 const kernel = createMemoryKernel(schema);

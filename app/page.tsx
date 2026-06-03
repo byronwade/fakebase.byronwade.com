@@ -27,6 +27,7 @@ import {
   FIDELITY_LABEL,
   FIDELITY_TONE,
   MIGRATION_STEPS,
+  NPM_URL,
   QUICK_START,
   REPO_URL,
 } from "@/lib/site-data";
@@ -129,9 +130,14 @@ export default function HomePage() {
                 GitHub
               </a>
             </div>
-            <p className="mt-5 font-mono text-sm text-muted-foreground">
-              <span className="select-none text-brand">$</span> pnpm add fakebase
-            </p>
+            <a
+              href={NPM_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 inline-block font-mono text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <span className="select-none text-brand">$</span> pnpm add @byronwade/fakebase
+            </a>
           </div>
 
           <div className="mx-auto mt-14 max-w-2xl">

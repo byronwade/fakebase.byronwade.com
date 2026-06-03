@@ -1,5 +1,6 @@
 # Fakebase
 
+[![npm](https://img.shields.io/npm/v/@byronwade/fakebase.svg)](https://www.npmjs.com/package/@byronwade/fakebase)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Built with Claude Code](https://img.shields.io/badge/built%20with-Claude%20Code-d97757.svg)](https://claude.com/claude-code)
 
@@ -40,7 +41,7 @@ ship against:
   `database.types.ts` that drop straight into a real Supabase project.
 - **Honest capability labels** — unsupported features throw a structured `CapabilityError`
   instead of silently faking behavior.
-- **Realistic fake data, free** — `@fakebase/seed` fills every table straight from your
+- **Realistic fake data, free** — `@byronwade/seed` fills every table straight from your
   schema (FK-correct, deterministic), so you never hand-write seed files. Swap in
   `@faker-js/faker` for richer data. See [docs/seeding.md](docs/seeding.md).
 - **AI-first** — generate rules, schema summaries, and agent prompts (`fakebase ai init`).
@@ -48,13 +49,13 @@ ship against:
 ## Quick start
 
 ```bash
-pnpm add fakebase
+pnpm add @byronwade/fakebase
 ```
 
 ```ts
 // lib/fakebase.ts  (server-only — the kernel uses Node fs/path/crypto)
 import "server-only";
-import { createClient, createMemoryKernel } from "fakebase";
+import { createClient, createMemoryKernel } from "@byronwade/fakebase";
 import type { Database } from "@/database.types";
 
 const kernel = createMemoryKernel<Database>({
@@ -118,18 +119,18 @@ export default async function PostsPage() {
 ## CLI
 
 ```bash
-npx fakebase init                 # scaffold config, schema, seeds, Next.js helpers
-npx fakebase dev                  # start the local runtime
-npx fakebase studio               # open the dev-only admin UI
-npx fakebase migrate new <name>   # create a timestamped SQL migration
-npx fakebase migrate diff         # diff schema IR and write a migration
-npx fakebase migrate export       # write Supabase-friendly migration files
-npx fakebase seed export          # generate supabase/seed.sql from current data
-npx fakebase seed gen             # generate fake data from your schema -> seed.sql
-npx fakebase types gen            # generate database.types.ts
-npx fakebase verify supabase      # run the compatibility suite vs real Supabase
-npx fakebase ai init              # scaffold AI rules + schema summaries
-npx fakebase doctor               # report unsupported APIs + adapter limits
+npx @byronwade/cli init                 # scaffold config, schema, seeds, Next.js helpers
+npx @byronwade/cli dev                  # start the local runtime
+npx @byronwade/cli studio               # open the dev-only admin UI
+npx @byronwade/cli migrate new <name>   # create a timestamped SQL migration
+npx @byronwade/cli migrate diff         # diff schema IR and write a migration
+npx @byronwade/cli migrate export       # write Supabase-friendly migration files
+npx @byronwade/cli seed export          # generate supabase/seed.sql from current data
+npx @byronwade/cli seed gen             # generate fake data from your schema -> seed.sql
+npx @byronwade/cli types gen            # generate database.types.ts
+npx @byronwade/cli verify supabase      # run the compatibility suite vs real Supabase
+npx @byronwade/cli ai init              # scaffold AI rules + schema summaries
+npx @byronwade/cli doctor               # report unsupported APIs + adapter limits
 ```
 
 Full reference: [docs/cli.md](docs/cli.md).
@@ -155,7 +156,7 @@ See [docs/migration-guide.md](docs/migration-guide.md).
 | Storage (buckets, upload/list/remove, signed URLs) | Supported                      | Local filesystem under `.fakebase/storage/`                                 |
 | Realtime (broadcast, Postgres changes, presence)   | Supported / Partial            | In-process pub/sub; presence is best-effort                                 |
 | Migrations + SQL export + type generation          | Supported                      | Supabase-compatible artifacts                                               |
-| Schema-driven fake data (`@fakebase/seed`)          | Supported                      | FK-correct + deterministic; built-in or Faker provider                      |
+| Schema-driven fake data (`@byronwade/seed`)          | Supported                      | FK-correct + deterministic; built-in or Faker provider                      |
 | RLS (grants, USING/WITH CHECK, roles)              | Partial                        | JavaScript approximation — **not** production RLS                           |
 | Functions / `functions.invoke`                     | Partial                        | Local JS registry; not a Deno edge runtime                                  |
 | OAuth / SSO / MFA / passkeys / PITR / vector       | Unsupported (capability-gated) | Returns `CapabilityError`; documented in the matrix                         |
@@ -179,7 +180,7 @@ packages/
   auth | storage | realtime | functions
   migrations            # diff, SQL export, snapshot/restore
   seed                  # schema-driven fake data engine (built-in provider)
-  seed-faker            # optional @faker-js/faker provider for @fakebase/seed
+  seed-faker            # optional @faker-js/faker provider for @byronwade/seed
   types                 # database.types.ts generator
   cli                   # init/dev/studio/migrate/types/seed/verify/doctor/ai
   ai                    # rules + summaries + agent prompt generation
@@ -204,7 +205,7 @@ pnpm format       # Prettier
 ```
 
 Releases use [Changesets](https://github.com/changesets/changesets): run `pnpm changeset`,
-then merge to `main` where the release workflow publishes the public `@fakebase/*` packages.
+then merge to `main` where the release workflow publishes the public `@byronwade/*` packages.
 
 ## License
 

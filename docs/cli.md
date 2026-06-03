@@ -4,7 +4,7 @@ The `fakebase` CLI is intentionally narrow and opinionated. Run any command with
 inline usage.
 
 ```bash
-npx fakebase <command> [subcommand] [options]
+npx @byronwade/cli <command> [subcommand] [options]
 ```
 
 ## `fakebase init`

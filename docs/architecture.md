@@ -2,24 +2,24 @@
 
 Fakebase is a TypeScript monorepo built around a single idea: **keep the Supabase developer
 contract stable while swapping the implementation underneath.** The compatibility logic lives in
-one place (`@fakebase/core`), and everything user-facing — the client, CLI, admin UI, and AI
+one place (`@byronwade/core`), and everything user-facing — the client, CLI, admin UI, and AI
 tooling — sits on top of it.
 
 ```
 Next.js app
    │
    ▼
-fakebase.createClient(url, key, { kernel })      ← Supabase-shaped facade (@fakebase/client)
+fakebase.createClient(url, key, { kernel })      ← Supabase-shaped facade (@byronwade/client)
    │  from() · auth · storage · realtime · functions · rpc
    ▼
-FakebaseKernel                                   ← orchestrator (@fakebase/core)
+FakebaseKernel                                   ← orchestrator (@byronwade/core)
    ├── schema registry (normalized IR)
    ├── query compiler (plan → adapter ops)
    ├── policy engine (grants + RLS predicates)
-   ├── auth engine        (@fakebase/auth)
-   ├── storage engine     (@fakebase/storage)
-   ├── realtime event bus (@fakebase/realtime)
-   ├── function registry  (@fakebase/functions)
+   ├── auth engine        (@byronwade/auth)
+   ├── storage engine     (@byronwade/storage)
+   ├── realtime event bus (@byronwade/realtime)
+   ├── function registry  (@byronwade/functions)
    ├── capability registry (structured errors)
    └── adapter interface
           ├── adapter-memory   (Map store, zero setup)
@@ -78,7 +78,7 @@ code. They share these traits:
 
 `adapter-pglite` runs a real Postgres engine compiled to WebAssembly, so it offers the highest
 SQL fidelity with no native build. Every adapter is verified against the **same** behavioural
-contract suite in `@fakebase/test-utils`, so swapping the persistence layer never changes
+contract suite in `@byronwade/test-utils`, so swapping the persistence layer never changes
 observable behaviour.
 
 ## Error model
@@ -92,18 +92,18 @@ the CLI `doctor`, the admin UI, and AI agents can surface consistent guidance.
 | Package                | Responsibility                                                                |
 | ---------------------- | ----------------------------------------------------------------------------- |
 | `fakebase`             | Main entry: `createClient`, kernel factories, re-exported types               |
-| `@fakebase/client`     | `database-builder` + auth/storage/realtime/functions facades                  |
-| `@fakebase/core`       | Kernel, schema IR, policy engine, query compiler, capability registry, errors |
-| `@fakebase/adapter-*`  | Persistence implementations (memory/json/sqlite)                              |
-| `@fakebase/auth`       | Local auth flows, session storage adapters, OTP inbox, PKCE helpers           |
-| `@fakebase/storage`    | Bucket/object metadata, file IO, signed URLs/tokens                           |
-| `@fakebase/realtime`   | Broadcast / presence / Postgres-change event bridge                           |
-| `@fakebase/functions`  | Local function registry + `invoke`                                            |
-| `@fakebase/migrations` | Schema diff, SQL export, seed export, snapshot/restore                        |
-| `@fakebase/types`      | `database.types.ts` generation + helper types                                 |
-| `@fakebase/cli`        | Command-line workflows                                                        |
-| `@fakebase/ai`         | Rules, summaries, and prompt generation                                       |
-| `@fakebase/test-utils` | Adapter contract suite + Supabase compatibility harness                       |
+| `@byronwade/client`     | `database-builder` + auth/storage/realtime/functions facades                  |
+| `@byronwade/core`       | Kernel, schema IR, policy engine, query compiler, capability registry, errors |
+| `@byronwade/adapter-*`  | Persistence implementations (memory/json/sqlite)                              |
+| `@byronwade/auth`       | Local auth flows, session storage adapters, OTP inbox, PKCE helpers           |
+| `@byronwade/storage`    | Bucket/object metadata, file IO, signed URLs/tokens                           |
+| `@byronwade/realtime`   | Broadcast / presence / Postgres-change event bridge                           |
+| `@byronwade/functions`  | Local function registry + `invoke`                                            |
+| `@byronwade/migrations` | Schema diff, SQL export, seed export, snapshot/restore                        |
+| `@byronwade/types`      | `database.types.ts` generation + helper types                                 |
+| `@byronwade/cli`        | Command-line workflows                                                        |
+| `@byronwade/ai`         | Rules, summaries, and prompt generation                                       |
+| `@byronwade/test-utils` | Adapter contract suite + Supabase compatibility harness                       |
 
 See [compatibility-matrix.md](compatibility-matrix.md) for method-level support and
 [security.md](security.md) for the boundaries of the RLS/auth approximations.

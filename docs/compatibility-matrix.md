@@ -1,7 +1,7 @@
 # Compatibility Matrix
 
 This matrix labels each Supabase-shaped API by how faithfully Fakebase reproduces it. Statuses map
-directly to the `CapabilityStatus` enum in `@fakebase/core`:
+directly to the `CapabilityStatus` enum in `@byronwade/core`:
 
 | Label           | Meaning                                                            |
 | --------------- | ------------------------------------------------------------------ |
@@ -106,5 +106,5 @@ directly to the `CapabilityStatus` enum in `@fakebase/core`:
 | Feature                             | Status      | Notes                                                                                                      |
 | ----------------------------------- | ----------- | ---------------------------------------------------------------------------------------------------------- |
 | Backups / PITR                      | Stub        | Use `fakebase snapshot save/restore` for local snapshots.                                                  |
-| Vector / `pgvector`                 | Unsupported | Not exposed by the adapters yet; `@fakebase/adapter-pglite` (Postgres-in-WASM) is the natural home for it. |
+| Vector / `pgvector`                 | Unsupported | Not exposed by the adapters yet; `@byronwade/adapter-pglite` (Postgres-in-WASM) is the natural home for it. |
 | `pg_cron` / `pg_net` / `pg_graphql` | Unsupported | Capability-gated.                                                                                          |

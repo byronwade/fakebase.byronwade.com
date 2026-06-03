@@ -36,7 +36,7 @@ const { data, error } = await supabase
   .select("*")
   .eq("published", true);`;
 
-const FAKEBASE_CODE = `import { createClient, createMemoryKernel } from "fakebase";
+const FAKEBASE_CODE = `import { createClient, createMemoryKernel } from "@byronwade/fakebase";
 
 const supabase = createClient("local", "dev-key", {
   kernel: createMemoryKernel(schema),
@@ -168,7 +168,7 @@ export default function HowItWorksPage() {
           Fakebase is built around a single idea: keep the Supabase developer contract
           stable while swapping the implementation underneath. The compatibility logic
           lives in one place —{" "}
-          <code className="font-mono text-foreground">@fakebase/core</code> — and
+          <code className="font-mono text-foreground">@byronwade/core</code> — and
           everything user-facing sits on top of it.
         </p>
       </header>

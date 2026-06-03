@@ -22,7 +22,7 @@ const STAGES: Stage[] = [
   },
   {
     label: "Facade",
-    owner: "@fakebase/client",
+    owner: "@byronwade/client",
     detail: "The builder records the chain; nothing executes until you await it.",
     code: `DatabaseBuilder {
   table: "posts",
@@ -31,7 +31,7 @@ const STAGES: Stage[] = [
   },
   {
     label: "Query compiler",
-    owner: "@fakebase/core",
+    owner: "@byronwade/core",
     detail: "The chain is compiled into a QueryPlan the adapter can run.",
     code: `QueryPlan {
   schema: "public", table: "posts",
@@ -42,7 +42,7 @@ const STAGES: Stage[] = [
   },
   {
     label: "Policy engine",
-    owner: "@fakebase/core",
+    owner: "@byronwade/core",
     detail:
       "USING / WITH CHECK predicates run for the role. (RLS off here → allow; with RLS on, a JS predicate filters rows.)",
     code: `role: "anon"  ·  rlsEnabled: false

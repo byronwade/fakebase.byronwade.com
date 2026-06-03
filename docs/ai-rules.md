@@ -1,6 +1,6 @@
 # AI Rules & Prompts
 
-Fakebase is built to be driven by AI coding agents. The `@fakebase/ai` package and the
+Fakebase is built to be driven by AI coding agents. The `@byronwade/ai` package and the
 `fakebase ai` CLI generate machine-readable rules, schema summaries, and task prompts so that
 agents understand the project's schema _and_ the hard constraints of a local/dev-only backend.
 

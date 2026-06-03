@@ -1,11 +1,11 @@
 # Admin UI
 
-`@fakebase/admin` (in `apps/admin`) is an optional, **dev-only** Next.js app for inspecting and
+`@byronwade/admin` (in `apps/admin`) is an optional, **dev-only** Next.js app for inspecting and
 editing your local Fakebase state — a focused "developer cockpit," not a full Supabase Studio
 clone.
 
 ```bash
-fakebase studio        # or: pnpm --filter @fakebase/admin dev
+fakebase studio        # or: pnpm --filter @byronwade/admin dev
 ```
 
 > [!WARNING]

@@ -13,7 +13,7 @@ Node, and more); the examples below use Next.js for concreteness. Every step use
 ## 1. Install
 
 ```bash
-pnpm add fakebase
+pnpm add @byronwade/fakebase
 ```
 
 You need Node `>=20`. No Docker, no local Postgres, no migrations to run first.
@@ -26,8 +26,8 @@ Create a single server-only module that owns the schema and exports a client.
 ```ts
 // lib/fakebase.ts  (server-only)
 import "server-only";
-import { createClient, createMemoryKernel } from "fakebase";
-import type { ProjectSchemaIR } from "fakebase";
+import { createClient, createMemoryKernel } from "@byronwade/fakebase";
+import type { ProjectSchemaIR } from "@byronwade/fakebase";
 import type { Database } from "@/database.types";
 
 const schema: ProjectSchemaIR = {
@@ -77,12 +77,12 @@ module scope and import `supabase` anywhere on the server.
 
 ### Optional: fill it with fake data
 
-An empty database is no fun to build against. `@fakebase/seed` generates realistic,
+An empty database is no fun to build against. `@byronwade/seed` generates realistic,
 referentially-correct rows straight from your schema — emails look like emails, foreign
 keys point at real parent rows, enums stay valid:
 
 ```ts
-import { seedClient } from "@fakebase/seed";
+import { seedClient } from "@byronwade/seed";
 
 // Idempotent — skips tables that already have rows.
 await seedClient(supabase, schema, { rowsPerTable: 20 });

@@ -78,7 +78,7 @@ match — most commonly RLS policies and `rpc` functions that relied on JS evalu
 The call shape is the same, so the diff is small:
 
 ```diff
-- import { createClient, createMemoryKernel } from "fakebase";
+- import { createClient, createMemoryKernel } from "@byronwade/fakebase";
 - const kernel = createMemoryKernel<Database>({ schema });
 - export const supabase = createClient<Database>("http://localhost", "local", { kernel });
 + import { createClient } from "@supabase/supabase-js";
@@ -99,7 +99,7 @@ Components keep the same structure.
 - [ ] `supabase/migrations/*.sql` applied to the real project
 - [ ] `supabase/seed.sql` reviewed (don't seed production with dev data by accident)
 - [ ] `database.types.ts` regenerated from the real project
-- [ ] `@fakebase/*` dependencies removed from the app's runtime path
+- [ ] `@byronwade/*` dependencies removed from the app's runtime path
 - [ ] `.fakebase/` excluded from production builds
 - [ ] Auth flows tested against real Supabase Auth
 - [ ] **RLS policies tested against real PostgreSQL** (not Fakebase's JS approximation)
