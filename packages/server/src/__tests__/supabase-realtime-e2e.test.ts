@@ -78,4 +78,41 @@ describe("real supabase-js realtime against Fakebase ws server", () => {
 
     expect(received[0]?.new?.title).toBe("live-event");
   }, 15000);
+
+  it("relays a broadcast to another client (cross-client)", async () => {
+    const server = createFakebaseServer({ kernel: createMemoryKernel(schema) });
+    const { url, close } = await server.listen(PORT + 1);
+    const a: SupabaseClient = createClient(url, DEV_ANON_KEY);
+    const b: SupabaseClient = createClient(url, DEV_ANON_KEY);
+    cleanup = async () => {
+      await a.removeAllChannels();
+      await b.removeAllChannels();
+      await close();
+    };
+
+    const got: Array<{ payload: Record<string, unknown> }> = [];
+    const chB = b.channel("room").on("broadcast", { event: "ping" }, (p) => got.push(p as never));
+    await new Promise<string>((resolve) => {
+      chB.subscribe((s) => (s === "SUBSCRIBED" ? resolve(s) : undefined));
+      setTimeout(() => resolve("timeout"), 5000);
+    });
+
+    // Sender uses the REST broadcast path (unsubscribed channel) — deterministic.
+    await a.channel("room").send({ type: "broadcast", event: "ping", payload: { n: 42 } });
+
+    await new Promise<void>((resolve, reject) => {
+      const start = Date.now();
+      const tick = setInterval(() => {
+        if (got.length > 0) {
+          clearInterval(tick);
+          resolve();
+        } else if (Date.now() - start > 3000) {
+          clearInterval(tick);
+          reject(new Error("no broadcast received"));
+        }
+      }, 50);
+    });
+
+    expect(got[0]?.payload?.n).toBe(42);
+  }, 15000);
 });

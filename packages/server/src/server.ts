@@ -3,7 +3,7 @@ import type { FakebaseKernel } from "@byronwade/core";
 import { handleRest, handleRpc } from "./rest/handler.js";
 import { handleAuth } from "./auth/handler.js";
 import { handleStorage } from "./storage/handler.js";
-import { handleRealtimeConnection } from "./realtime/server.js";
+import { handleRealtimeConnection, handleBroadcastHttp, RealtimeHub } from "./realtime/server.js";
 import { withCors, type CorsOption } from "./cors.js";
 import { errorJson, toErrorResponse } from "./errors.js";
 import type { AuthConfig } from "./context.js";
@@ -37,9 +37,15 @@ export function createFakebaseServer(opts: FakebaseServerOptions): FakebaseServe
     serviceKey: opts.serviceKey ?? DEV_SERVICE_KEY,
     jwtSecret: opts.jwtSecret ?? DEV_JWT_SECRET,
   };
+  // Shared across HTTP (the broadcast API) and the ws connections.
+  const hub = new RealtimeHub();
 
   async function route(req: Request, url: URL): Promise<Response> {
     const path = url.pathname;
+    if (path === "/realtime/v1/api/broadcast" && req.method === "POST") {
+      const body = await req.json().catch(() => ({}));
+      return handleBroadcastHttp(body, hub);
+    }
     if (path.startsWith("/rest/v1/rpc/")) {
       return handleRpc(req, decodeURIComponent(path.slice("/rest/v1/rpc/".length)), kernel, authCfg);
     }
@@ -82,7 +88,7 @@ export function createFakebaseServer(opts: FakebaseServerOptions): FakebaseServe
     fetch,
     listen: (port?: number) =>
       nodeListen(fetch, port, {
-        onRealtime: (socket) => handleRealtimeConnection(socket, kernel),
+        onRealtime: (socket) => handleRealtimeConnection(socket, kernel, hub),
       }),
     anonKey: authCfg.anonKey,
     serviceKey: authCfg.serviceKey,
