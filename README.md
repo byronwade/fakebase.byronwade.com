@@ -121,6 +121,7 @@ export default async function PostsPage() {
 ```bash
 npx @byronwade/cli init                 # scaffold config, schema, seeds, Next.js helpers
 npx @byronwade/cli dev                  # start the local runtime
+npx @byronwade/cli serve                # serve a Supabase-wire HTTP API (real supabase-js connects)
 npx @byronwade/cli studio               # open the dev-only admin UI
 npx @byronwade/cli migrate new <name>   # create a timestamped SQL migration
 npx @byronwade/cli migrate diff         # diff schema IR and write a migration

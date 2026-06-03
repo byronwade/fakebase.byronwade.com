@@ -1,0 +1,33 @@
+{
+  "name": "@byronwade/server",
+  "version": "0.1.0",
+  "description": "Local HTTP server that speaks the Supabase wire protocol (PostgREST + GoTrue), backed by the Fakebase kernel — so the real @supabase/supabase-js works as a drop-in.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist", "README.md"],
+  "exports": { ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" } },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "@byronwade/core": "workspace:*",
+    "@byronwade/auth": "workspace:*"
+  },
+  "devDependencies": {
+    "@byronwade/adapter-memory": "workspace:*",
+    "@supabase/supabase-js": "^2.45.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  },
+  "engines": { "node": ">=20.0.0" },
+  "sideEffects": false,
+  "publishConfig": { "access": "public" },
+  "keywords": ["supabase", "postgrest", "gotrue", "local", "server", "fakebase"]
+}

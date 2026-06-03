@@ -1,6 +1,7 @@
 import { Command } from "commander";
 import { runInit } from "./commands/init.js";
 import { runDev } from "./commands/dev.js";
+import { runServe } from "./commands/serve.js";
 import { runStudio } from "./commands/studio.js";
 import {
   runMigrateNew,
@@ -49,6 +50,17 @@ export function createProgram(): Command {
     .option("--port <port>", "Port for the dev server (default: 54321)")
     .action(async (opts: { studio?: boolean; port?: string }) => {
       await runDev(opts);
+    });
+
+  // ─── fakebase serve ──────────────────────────────────────────────────────────
+  program
+    .command("serve")
+    .description(
+      "Serve a Supabase-wire-compatible HTTP API so the real @supabase/supabase-js can connect.",
+    )
+    .option("--port <port>", "Port for the HTTP server (default: 54321)")
+    .action(async (opts: { port?: string }) => {
+      await runServe(opts);
     });
 
   // ─── fakebase studio ─────────────────────────────────────────────────────────

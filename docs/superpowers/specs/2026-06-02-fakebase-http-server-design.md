@@ -1,7 +1,21 @@
 # Fakebase Local HTTP Server (`@byronwade/server`) — Phase 1: DB + Auth — Design
 
 **Date:** 2026-06-02
-**Status:** Approved-pending-review
+**Status:** Implemented (Phase 1)
+
+## Implementation outcome
+
+Shipped `packages/server` → `@byronwade/server` (TDD, 36 tests) + `fakebase serve` (CLI). The
+**definitive proof passes**: the real `@supabase/supabase-js`, unmodified, works against the
+server both in-process (custom `fetch`) and over a real HTTP port — CRUD, `eq`/`gt`/`in`/`order`,
+`count: exact`, `single()`, and the full `signUp → signInWithPassword → getUser → signOut` auth
+lifecycle. Decisions taken on the open questions: package name `@byronwade/server`; fixed
+well-known dev keys (`DEV_ANON_KEY`/`DEV_SERVICE_KEY`/`DEV_JWT_SECRET`); added `fakebase serve`
+as a dedicated command (left `dev` as-is). Phases 2 (storage) and 3 (realtime ws) remain.
+
+---
+
+**Original status:** Approved-pending-review
 **Author:** Byron Wade (with Claude)
 **Builds on:** the existing kernel (`packages/core` — `FakebaseKernel.query(plan)`, `setRole`),
 `@byronwade/auth`, and the CLI (`fakebase dev`/`serve`).
