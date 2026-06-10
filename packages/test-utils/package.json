@@ -35,7 +35,7 @@
     "@byronwade/adapter-json": "workspace:*",
     "@byronwade/adapter-sqlite": "workspace:*",
     "@byronwade/adapter-pglite": "workspace:*",
-    "@types/node": "^22.0.0",
+    "@types/node": "^22.19.20",
     "typescript": "^5.5.0",
     "vitest": "^2.0.0"
   },
